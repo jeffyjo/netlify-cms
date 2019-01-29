@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import { TestPageTemplate } from '../../templates/test-page'
 
 const TestPagePreview = ({ entry, widgetFor }) => {
-	console.log('entry', entry)
-	console.log('widgetFor', widgetFor)
 	
 	return (
 		<TestPageTemplate
 			title={entry.getIn(['data', 'title'])}
 			content={widgetFor('body')}
+      number={widgetFor('number')}
 		/>
 	)
 }
