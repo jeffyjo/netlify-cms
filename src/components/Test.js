@@ -4,12 +4,10 @@ const Test = ({data}) => {
   const { markdownRemark } = data
 
   return (
-    <div>
+    <div className="test">
       <h1>Test</h1>
     </div>
   )
 }
 
 export default Test
-
-export const 

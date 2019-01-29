@@ -50,4 +50,10 @@ $body-color: #333;
   margin-top: 0 !important;
 }
 
-@import "~bulma"
+@import "~bulma";
+
+.test {
+  background: black;
+  color: white;
+  padding: 20px;
+}
