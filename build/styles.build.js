@@ -1,10 +1,6 @@
 const fs = require('fs')
 const { ATOM_CONFIG, ROOT_CONFIG } = require('./config.build')
 
-// console.log(ATOM_CONFIG)
-// console.log('______________________')
-// console.log(ROOT_CONFIG)
-
 /**
  * Create files for root of style
  */
