@@ -1,6 +1,6 @@
 ---
 templateKey: test-page
-title: 'A huge test '
+title: A nice new test
 ---
 ### This is just a test
 
