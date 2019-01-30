@@ -2,7 +2,7 @@
 templateKey: test-page
 title: A nice new test
 number: 12
-bool: true
+bool: false
 date: 29th Jan 19
 dateTime: 'January 29, 2019 1:12 PM'
 file: /img/chemex.jpg
