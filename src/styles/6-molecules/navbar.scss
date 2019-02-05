@@ -1,0 +1,10 @@
+.m-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.m-navbar__item {
+  color: $main-text;
+  margin: 0 $spacing--sm;
+  text-decoration: none;
+}
