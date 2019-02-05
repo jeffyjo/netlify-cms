@@ -8,7 +8,7 @@ const ArticlePagePreview = ({ entry, widgetFor }) => {
 			title={entry.getIn(['data', 'title'])}
 			content={widgetFor('body')}
       date={widgetFor('date')}
-      path={entry.getIn(['data', 'path'])}
+      tags={entry.getIn(['data', 'tags'])}
 		/>
 	)
 }

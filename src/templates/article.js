@@ -15,7 +15,7 @@ export const ArticleTemplate = ({
   return(
     <article>
       <h1>{title}</h1>
-      <date>{date}</date>
+      <p>{date}</p>
       <PageContent content={content} />
     </article>
   )
@@ -36,6 +36,7 @@ const ArticlePage = ({data}) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
+        date={post.frontmatter.date}
       />
     </Layout>
   )
