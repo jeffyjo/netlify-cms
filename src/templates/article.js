@@ -9,10 +9,7 @@ export const ArticleTemplate = ({
   content, 
   contentComponent, 
   date,
-  path 
 }) => {
-  console.log('path', path)
-  console.log('date', date)
   const PageContent = contentComponent || Content
 
   return(
@@ -39,7 +36,6 @@ const ArticlePage = ({data}) => {
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
-        path={path}
       />
     </Layout>
   )
@@ -54,7 +50,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        path
         date(formatString: "MMMM DD, YYYY")
       }
     }
