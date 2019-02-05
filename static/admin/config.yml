@@ -54,3 +54,19 @@ collections:
           - {label: "Bool", name: "bool", widget: "boolean", default: false }
           - {label: "Date", name: "date", widget: "date", default: "", format: "Do MMM YY"}
           - {label: "DateTime", name: "dateTime", widget: "datetime", default: "", format: "LLL" }
+          - {label: "File", name: "file", widget: "file"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "List", name: "list", widget: "list", default: ["li1, li2, li3"]}
+          - {label: "Select", name: "select", widget: "select", options: ["top", "middle", "bottom"]}
+          - {label: "Text", name: "text", widget: "text"}
+  - name: "article"
+    label: "Article"
+    folder: "src/pages/article"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish data", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Path", name: "path", widget: "string" }

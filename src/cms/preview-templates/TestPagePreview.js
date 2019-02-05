@@ -9,6 +9,7 @@ const TestPagePreview = ({ entry, widgetFor }) => {
 			title={entry.getIn(['data', 'title'])}
 			content={widgetFor('body')}
       number={widgetFor('number')}
+      bool={widgetFor('bool')}
 		/>
 	)
 }

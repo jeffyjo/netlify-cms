@@ -4,13 +4,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const TestPageTemplate = ({ title, content, contentComponent, number}) => {  
+export const TestPageTemplate = ({ title, content, contentComponent, number, bool}) => {  
+  console.log('bool', bool)
   const PageContent = contentComponent || Content
 
   return (
     <section>
       <h1 className="title">{title}</h1>
       <h2 className="number">{number}</h2>
+      <p>{bool ? "on" : "off"}</p>
       <PageContent className="content" content={content} />
     </section>
   )
@@ -32,6 +34,7 @@ const TestPage = ({data}) => {
         title={post.frontmatter.title}
         content={post.html}
         number={post.frontmatter.number}
+        bool={post.frontmatter.bool}
       />
     </Layout>
   )
@@ -46,6 +49,7 @@ export const TestPageQuery = graphql`
       frontmatter {
         title
         number
+        bool
       }
     }
   }
