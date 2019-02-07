@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import LinkIcon from '../atoms/LinkIcon/LinkIcon';
+import LinkIcon from '../atoms/LinkIcon/LinkIcon'
+
+import './navbar.scss'
 
 const Navbar = class extends React.Component {
 

@@ -1,6 +1,7 @@
 @import '1-settings/settings';
 @import '1-settings/colors';
 @import '1-settings/spacing';
+@import '1-settings/typography';
 
 @import '2-tools/tools';
 
@@ -9,10 +10,8 @@
 
 @import '4-elements/elements';
 
-@import '6-molecules/molecules';
-@import '6-molecules/navbar.scss';
-
 @import '7-organisms/header';
 @import '7-organisms/navbar';
+@import '7-organisms/article';
 
 @import '8-pages/pages';

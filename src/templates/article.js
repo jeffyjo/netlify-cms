@@ -4,18 +4,22 @@ import { graphql } from 'gatsby'
 import Layout from '../components/util/Layout'
 import Content, { HTMLContent } from '../components/util/Content'
 
+import DateStamp from '../components/atoms/DateStamp/DateStamp'
+
 export const ArticleTemplate = ({ 
   title, 
   content, 
   contentComponent, 
   date,
+  image
 }) => {
   const PageContent = contentComponent || Content
+  console.log('image', image)
 
   return(
-    <article>
+    <article className="o-article">
       <h1>{title}</h1>
-      <p>{date}</p>
+      <DateStamp date={date} />
       <PageContent content={content} />
     </article>
   )
