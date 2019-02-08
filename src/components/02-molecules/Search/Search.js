@@ -6,7 +6,7 @@ import {
   fromParamsToObject 
 } from '../../util/Util'
 
-import TextField from '../../01-atoms/TextField/TextField'
+import SearchField from '../../01-atoms/SearchField/SearchField'
 import './Search.scss'
 
 class Search extends Component {
@@ -14,7 +14,7 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      searchValue: ''
+      searchValue: this.getSearchParams() ? this.getSearchParams() : ''
     }
 
     this.setSearchParams = this.setSearchParams.bind(this)
@@ -24,9 +24,7 @@ class Search extends Component {
 
   getSearchParams() {
     let queryObject = fromParamsToObject()
-    this.setState({
-      searchValue: queryObject.search
-    })
+    return queryObject.search
   }
 
   setSearchParams(e, path = '') {
@@ -51,15 +49,11 @@ class Search extends Component {
     navigate('/search-results')
   }
 
-  componentDidMount() {
-    this.getSearchParams()
-  }
-
   render() {
       return (
         <div className="m-search">
           <form onSubmit={(e) => this.onSubmitSearch(e)}>
-            <TextField type="search" componentClass="m-search__input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
+            <SearchField componentClass="m-search__input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
           </form>
       </div>
     )

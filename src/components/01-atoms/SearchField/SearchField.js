@@ -1,23 +1,22 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-const TextField = ({type, componentClass, action, value}) => {
+const SearchField = ({componentClass, action, value}) => {
 
   return (
     <input 
+      type="search" 
       className={"a-text-field " + componentClass ? componentClass : ''}
-      type={type} 
       onChange={action}
       value={value}
     />
   )
 }
 
-TextField.propTypes = {
-  type: propTypes.string.isRequired,
+SearchField.propTypes = {
   componentClass: propTypes.string,
   action: propTypes.func,
   value: propTypes.string
 }
 
-export default TextField
+export default SearchField
