@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/util/Layout'
 import Content, { HTMLContent } from '../components/util/Content'
 
-import DateStamp from '../components/atoms/DateStamp/DateStamp'
+import DateStamp from '../components/01-atoms/DateStamp/DateStamp'
 
 export const ArticleTemplate = ({ 
   title, 

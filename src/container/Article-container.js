@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ArticleItem from '../components/molecules/ArticleItem/ArticleItem'
+import ArticleItem from '../components/02-molecules/ArticleItem/ArticleItem'
 
 const ArticleContainer = ({articles}) => {
   console.log('articles', articles)
