@@ -1,10 +1,9 @@
 ---
 templateKey: article
-title: Title
-date: 2019-02-06T09:31:55.005Z
+title: Reading for a long time
+date: 2019-02-07T09:38:46.554Z
 tags:
   - article
-  - tag2
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ex feugiat, eleifend eros eu, pharetra enim. Donec id arcu sit amet urna convallis placerat. Phasellus aliquam nisl ac mi tincidunt feugiat at et tellus. Nam nec eleifend nisl, eget pellentesque tortor. Etiam ut posuere diam. Sed sodales efficitur vestibulum. Aenean convallis dolor eu dictum laoreet.
 
