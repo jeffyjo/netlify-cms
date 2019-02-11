@@ -7,10 +7,10 @@ const NavList = () => {
   return (
     <div className="m-navbar">
       <Link className="m-navbar__item" to="/">
-        About
+        Articles
       </Link>
-      <Link className="m-navbar__item" to="/">
-        About
+      <Link className="m-navbar__item" to="/tags">
+        Tags
       </Link>
     </div>
   )
