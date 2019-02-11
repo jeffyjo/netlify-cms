@@ -1,13 +1,13 @@
 ---
 templateKey: article
 title: Another article
-date: 2019-02-05T09:38:46.554Z
 image: /img/apple-touch-icon.png
-headerPosition: center
+date: 2019-02-05T09:38:46.554Z
 tags:
   - article
   - test
   - tag123
+headerPosition: right
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ex feugiat, eleifend eros eu, pharetra enim. Donec id arcu sit amet urna convallis placerat. Phasellus aliquam nisl ac mi tincidunt feugiat at et tellus. Nam nec eleifend nisl, eget pellentesque tortor. Etiam ut posuere diam. Sed sodales efficitur vestibulum. Aenean convallis dolor eu dictum laoreet.
 
