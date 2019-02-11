@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../../components/util/Layout'
-import Grid from '../../components/03-organisms/Grid/Grid'
+import List from '../../components/03-organisms/List/List'
 
 import SearchObservable from '../../components/util/SearchObservable'
 import { fromParamsToObject } from '../../components/util/Util'
@@ -52,7 +52,7 @@ class SearchResults extends Component  {
             : 
             <div>
               <h2 className="o-search-results__heading">Results</h2>
-              <Grid items={this.state.pages} />
+              <List items={this.state.pages} />
             </div>
           }
         </section>

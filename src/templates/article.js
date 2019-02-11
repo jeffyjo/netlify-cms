@@ -29,7 +29,9 @@ export const ArticleTemplate = ({
 ArticleTemplate.prototypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-  contentComponent: PropTypes.func
+  contentComponent: PropTypes.func,
+  date: PropTypes.string,
+  imageUrl: PropTypes.string
 }
 
 const ArticlePage = ({data}) => {
@@ -42,7 +44,11 @@ const ArticlePage = ({data}) => {
         title={post.frontmatter.title}
         content={post.html}
         date={post.frontmatter.date}
-        imageUrl={post.frontmatter.image.publicURL}
+        imageUrl={
+          post.frontmatter.image 
+            ? post.frontmatter.image.publicURL
+            : ''
+        }
       />
     </Layout>
   )

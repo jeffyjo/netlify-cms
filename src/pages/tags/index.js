@@ -3,7 +3,6 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/util/Layout'
-import TagList from '../../components/02-molecules/TagList/TagList';
 import './tags.scss'
 
 const TagsPage = ({
@@ -12,19 +11,17 @@ const TagsPage = ({
   <Layout>
     <section className="">
       <Helmet title={`Tags | ${title}`} />
-      <div className="o-tags">
-        <h1 className="o-tags__header">Tags</h1>
-        {/* <TagList> */}
-        <div className="o-grid">
+      <div className="p-tags">
+        <h1 className="p-tags__header">Tags</h1>
+        <ul className="o-list">
           {group.map(tag => (
-            <li key={tag.fieldValue} className="o-tags__item">
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="o-tags__item-link">
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="m-list-item">
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
             </li>
           ))}
-        </div>
-        {/* </TagList> */}
+        </ul>
       </div>
     </section>
   </Layout>
