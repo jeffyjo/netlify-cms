@@ -55,6 +55,7 @@ class Search extends Component {
         <div className="m-search">
           <form className="m-search__form" onSubmit={(e) => this.onSubmitSearch(e)}>
             <SearchField componentClass="a-search m-search__form-input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
+            <button type="submit" className="m-search__form-submit">Search</button>
           </form>
       </div>
     )

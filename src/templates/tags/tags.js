@@ -1,17 +1,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/util/Layout'
+import Layout from '../../components/util/Layout'
 
-import TagList from '../components/02-molecules/TagList/TagList'
+import './tags.scss'
 
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
     const tagLinks = posts.map(post => (
-      <li key={post.node.fields.slug} className="m-tag-item">
-        <Link to={post.node.fields.slug} className="m-tag-item__link">
-          <h2 className="a-tag-link">{post.node.frontmatter.title}</h2>
+      <li key={post.node.fields.slug}>
+        <Link to={post.node.fields.slug} className="m-list-item">
+          <h2 className="m-list-item__title m-list-item__title--sm">{post.node.frontmatter.title}</h2>
         </Link>
       </li>
     ))
@@ -26,11 +26,11 @@ class TagRoute extends React.Component {
       <Layout>
         <section>
           <Helmet title={`${tag} | ${title}`} />
-          <div className="o-tags">
-            <h3 className="o-tags__header">{tagHeader}</h3>
-            <TagList>{tagLinks}</TagList>
+          <div className="t-tags">
+            <h3 className="t-tags__header">{tagHeader}</h3>
+            <ul className="o-list">{tagLinks}</ul>
             <p>
-              <Link className="o-tags__link" to="/tags/">Browse all tags</Link>
+              <Link className="t-tags__link" to="/tags/">Browse all tags</Link>
             </p>
           </div>
         </section>

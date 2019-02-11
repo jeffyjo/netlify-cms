@@ -24,7 +24,7 @@ const TemplateWrapper = ({ children }) => (
           <title>{data.site.siteMetadata.title}</title>
           <meta name="description" content={data.site.siteMetadata.description} />
           
-          <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+          <link rel="apple-touch-icon" sizes="32x32" href="/img/favicon-32x32.png" />
 	        <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
 	        <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
 	

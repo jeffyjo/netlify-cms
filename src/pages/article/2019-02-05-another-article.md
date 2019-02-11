@@ -3,6 +3,7 @@ templateKey: article
 title: Another article
 image: /img/apple-touch-icon.png
 date: 2019-02-05T09:38:46.554Z
+image: /img/apple-touch-icon.png
 tags:
   - article
   - test

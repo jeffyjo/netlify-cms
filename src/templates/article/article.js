@@ -1,25 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/util/Layout'
-import Content, { HTMLContent } from '../components/util/Content'
+import Layout from '../../components/util/Layout'
+import Content, { HTMLContent } from '../../components/util/Content'
 
-import DateStamp from '../components/01-atoms/DateStamp/DateStamp'
+import ArticleHeader from '../../components/02-molecules/ArticleHeader/ArticleHeader'
 
 export const ArticleTemplate = ({ 
   title, 
   content, 
   contentComponent, 
   date,
-  image
+  imageUrl,
+  timeToRead
 }) => {
   const PageContent = contentComponent || Content
-  console.log('image', image)
 
   return(
     <article className="o-article">
-      <h1>{title}</h1>
-      <DateStamp date={date} />
+      <ArticleHeader title={title} date={date} imageUrl={imageUrl} timeToRead={timeToRead} />
       <PageContent content={content} />
     </article>
   )
@@ -28,7 +27,10 @@ export const ArticleTemplate = ({
 ArticleTemplate.prototypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-  contentComponent: PropTypes.func
+  contentComponent: PropTypes.func,
+  date: PropTypes.string,
+  imageUrl: PropTypes.string,
+  timeToRead: PropTypes.number
 }
 
 const ArticlePage = ({data}) => {
@@ -41,6 +43,12 @@ const ArticlePage = ({data}) => {
         title={post.frontmatter.title}
         content={post.html}
         date={post.frontmatter.date}
+        imageUrl={
+          post.frontmatter.image 
+          ? post.frontmatter.image.publicURL
+          : ''
+        }
+        timeToRead={post.timeToRead}
       />
     </Layout>
   )
@@ -53,9 +61,13 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id}) {
       id
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        image {
+          publicURL
+        }
       }
     }
   }

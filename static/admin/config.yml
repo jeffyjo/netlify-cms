@@ -14,7 +14,8 @@ collections:
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "article" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Image", name: "image", widget: "image", default: null, media_library: { config: { multiple: false } } }
       - { label: "Publish date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "tags", name: "tags", widget: "list", default: ["article"] }
+      - { label: "Tags", name: "tags", widget: "list", default: ["article"] }
+      - { label: "Header position", name: "headerPosition", widget: "select", options: ["left", "center", "right"], default: ["center"] }
