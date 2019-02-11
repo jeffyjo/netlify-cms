@@ -7,6 +7,7 @@ tags:
   - article
   - test
   - tag123
+headerPosition: center
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ex feugiat, eleifend eros eu, pharetra enim. Donec id arcu sit amet urna convallis placerat. Phasellus aliquam nisl ac mi tincidunt feugiat at et tellus. Nam nec eleifend nisl, eget pellentesque tortor. Etiam ut posuere diam. Sed sodales efficitur vestibulum. Aenean convallis dolor eu dictum laoreet.
 
