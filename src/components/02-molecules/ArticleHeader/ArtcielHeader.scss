@@ -1,11 +1,21 @@
 .m-article-header {
-  
+  display: flex;
+  flex-direction: column;
+
+  &--center {
+    align-items: center;
+  }
+
+  &--right {
+    align-items: flex-end;
+  }
+
 }
 
 .m-article-header__image {
-  display: block;
-  height: 100%;
-  margin: 0 auto;
+  // display: block;
+  // height: 100%;
+  // margin: 0 auto;
 }
 
 .m-article-header__info {

@@ -12,13 +12,15 @@ export const ArticleTemplate = ({
   contentComponent, 
   date,
   imageUrl,
-  timeToRead
+  timeToRead,
+  headerPosition
 }) => {
   const PageContent = contentComponent || Content
+  console.log('headerPosition', headerPosition)
 
   return(
     <article className="o-article">
-      <ArticleHeader title={title} date={date} imageUrl={imageUrl} timeToRead={timeToRead} />
+      <ArticleHeader title={title} date={date} imageUrl={imageUrl} timeToRead={timeToRead} headerPosition={headerPosition}  />
       <PageContent content={content} />
     </article>
   )
@@ -30,10 +32,12 @@ ArticleTemplate.prototypes = {
   contentComponent: PropTypes.func,
   date: PropTypes.string,
   imageUrl: PropTypes.string,
-  timeToRead: PropTypes.number
+  timeToRead: PropTypes.number,
+  headerPosition: PropTypes.string.isRequired 
 }
 
 const ArticlePage = ({data}) => {
+  // Contains all data
   const { markdownRemark: post } = data
 
   return (
@@ -49,6 +53,7 @@ const ArticlePage = ({data}) => {
           : ''
         }
         timeToRead={post.timeToRead}
+        headerPosition={post.frontmatter.headerPosition}
       />
     </Layout>
   )
@@ -65,6 +70,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        headerPosition
         image {
           publicURL
         }

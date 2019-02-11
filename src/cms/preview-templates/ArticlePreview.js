@@ -10,7 +10,7 @@ const ArticlePagePreview = ({ entry, widgetFor }) => {
       date={widgetFor('date')}
       tags={entry.getIn(['data', 'tags'])}
       image={entry.getIn(['data', 'image'])}
-      headerPosition={widgetFor('headerPosition')}
+      headerPosition={entry.getIn(['data', 'headerPosition'])}
 		/>
 	)
 }
