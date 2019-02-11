@@ -5,13 +5,48 @@ import { graphql } from 'gatsby'
 import Layout from '../components/util/Layout'
 import Grid from '../components/03-organisms/Grid/Grid'
 
+import SearchObservable from '../components/util/SearchObservable'
+import { fromParamsToObject } from '../components/util/Util'
+
 class SearchResults extends Component  {
+  
+  constructor(props) {
+    super(props)
+
+    this.fullList = props.data.allMarkdownRemark.edges
+    
+    this.state = {
+      pages: this.fullList
+    }
+
+    this.filterResults = this.filterResults.bind(this)
+  }
+
+  componentDidMount() {
+    SearchObservable.subscribe((data) => this.filterResults(data))
+    
+    const searchQuery = fromParamsToObject()
+    this.filterResults(searchQuery.search)
+  }
+
+  filterResults(searchValue) {
+    let pages = searchValue.length > 0
+      ? this.fullList.filter( page => {
+          const { title } = page.node.frontmatter
+          return (title.toLowerCase().indexOf(searchValue.toLowerCase())) !== -1
+        })
+      : this.fullList
+
+    this.setState({
+      pages: pages
+    })
+  }
+
   render() {
-    const { edges: pages } = this.props.data.allMarkdownRemark
     return(
       <Layout>
         <section>
-          <Grid items={pages} />
+          <Grid items={this.state.pages} />
         </section>
       </Layout>
     )
