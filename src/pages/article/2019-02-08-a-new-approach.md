@@ -2,6 +2,7 @@
 templateKey: article
 title: A new approach
 date: 2019-02-08T09:38:46.554Z
+headerPosition: center
 tags:
   - article
 ---

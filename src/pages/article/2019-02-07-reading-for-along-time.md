@@ -2,6 +2,7 @@
 templateKey: article
 title: Reading for a long time
 date: 2019-02-07T09:38:46.554Z
+headerPosition: center
 tags:
   - article
 ---

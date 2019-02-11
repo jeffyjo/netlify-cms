@@ -2,6 +2,7 @@
 templateKey: article
 title: A new day in life
 date: 2019-02-05T09:38:46.554Z
+headerPosition: center
 tags:
   - article
 ---
