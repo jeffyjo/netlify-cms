@@ -6,8 +6,8 @@ const SearchField = ({componentClass, action, value}) => {
   return (
     <input 
       type="search" 
-      className={"a-text-field " + componentClass ? componentClass : ''}
       onChange={action}
+      className={"a-text-field " + componentClass ? componentClass : ''}
       value={value}
     />
   )

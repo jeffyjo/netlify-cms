@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { navigate } from 'gatsby'
 
 import { 
-  fromObjectToParams,
-  fromParamsToObject 
+  fromParamsToObject,
 } from '../../util/Util'
+
+import { searchKey } from '../../util/Const'
+import SearchObservable from '../../util/SearchObservable'
 
 import SearchField from '../../01-atoms/SearchField/SearchField'
 import './Search.scss'
@@ -14,9 +16,9 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      searchValue: this.getSearchParams() ? this.getSearchParams() : ''
+      searchValue: window ? this.getSearchParams() : ''
     }
-
+    
     this.setSearchParams = this.setSearchParams.bind(this)
     this.getSearchParams = this.getSearchParams.bind(this)
     this.onSubmitSearch = this.onSubmitSearch.bind(this)
@@ -29,24 +31,17 @@ class Search extends Component {
 
   setSearchParams(e, path = '') {
     let value = e.target.value
-
-    if(value.length <= 0) {
-      navigate('/')
-      return
-    }
     
-    let data = {
-      key: 'search',
-      value: value
-    }
+    this.setState({
+      searchValue: value
+    })
     
-    let query = fromObjectToParams(data)
-    navigate(`${path}${query}`)
+    SearchObservable.notify(value)
   }
 
   onSubmitSearch(e) {
     e.preventDefault()
-    navigate('/search-results')
+    navigate(`/search-results?${searchKey}=${this.state.searchValue}`)
   }
 
   render() {
