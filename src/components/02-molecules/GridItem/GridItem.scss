@@ -1,0 +1,19 @@
+.m-grid-item {
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  padding: 1rem;
+  color: #2f2f2f;
+  background-color: rgba(#2f2f2f, .05);
+  border-radius: .25rem;
+  transition: background-color .2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(#2f2f2f, .2);
+  }
+}
+
+.m-grid-item__title {
+  margin: 0;
+}

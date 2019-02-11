@@ -1,0 +1,10 @@
+@import '../../../styles/style.scss';
+
+.o-header {
+  background: $header-background;
+  color: $main-text;
+  padding: $spacing--md $spacing--lg;
+
+  display: flex;
+  flex-direction: row;
+} 

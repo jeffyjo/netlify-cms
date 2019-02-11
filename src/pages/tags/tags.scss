@@ -1,0 +1,19 @@
+.o-tags {
+  margin: 1em;
+}
+
+.o-tags__item,
+.o-tags__link {
+  opacity: .8;
+  transition: opacity .2s ease-in;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.o-tags__item-link,
+.o-tags__link {
+  text-decoration: none;
+  color: #2f2f2f;
+}
