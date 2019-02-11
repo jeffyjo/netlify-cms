@@ -11,6 +11,7 @@ const SearchField = ({componentClass, action, value}) => {
       onChange={action}
       className={"a-search " + componentClass ? componentClass : ''}
       value={value || ''}
+      placeholder="Search..."
     />
   )
 }
