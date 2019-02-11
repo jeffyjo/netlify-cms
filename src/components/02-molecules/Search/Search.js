@@ -16,12 +16,18 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      searchValue: window ? this.getSearchParams() : ''
+      searchValue: ''
     }
     
     this.setSearchParams = this.setSearchParams.bind(this)
     this.getSearchParams = this.getSearchParams.bind(this)
     this.onSubmitSearch = this.onSubmitSearch.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({
+      searchValue: window ? this.getSearchParams() : ''
+    })
   }
 
   getSearchParams() {
