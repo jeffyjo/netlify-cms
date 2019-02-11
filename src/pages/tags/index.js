@@ -14,7 +14,8 @@ const TagsPage = ({
       <Helmet title={`Tags | ${title}`} />
       <div className="o-tags">
         <h1 className="o-tags__header">Tags</h1>
-        <TagList>
+        {/* <TagList> */}
+        <div className="o-grid">
           {group.map(tag => (
             <li key={tag.fieldValue} className="o-tags__item">
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="o-tags__item-link">
@@ -22,17 +23,8 @@ const TagsPage = ({
               </Link>
             </li>
           ))}
-        </TagList>
-        
-        {/* <ul className="taglist">
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul> */}
+        </div>
+        {/* </TagList> */}
       </div>
     </section>
   </Layout>

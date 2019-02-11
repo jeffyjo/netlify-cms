@@ -11,14 +11,15 @@ export const ArticleTemplate = ({
   content, 
   contentComponent, 
   date,
-  image
+  imageUrl
 }) => {
   const PageContent = contentComponent || Content
-  console.log('image', image)
+  console.log('imageUrl', imageUrl)
 
   return(
     <article className="o-article">
       <h1>{title}</h1>
+      <img src={imageUrl} />
       <DateStamp date={date} />
       <PageContent content={content} />
     </article>
@@ -41,6 +42,7 @@ const ArticlePage = ({data}) => {
         title={post.frontmatter.title}
         content={post.html}
         date={post.frontmatter.date}
+        imageUrl={post.frontmatter.image.publicURL}
       />
     </Layout>
   )
@@ -56,6 +58,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        image {
+          publicURL
+        }
       }
     }
   }

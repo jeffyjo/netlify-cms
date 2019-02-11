@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/util/Layout'
-import Grid from '../components/03-organisms/Grid/Grid'
+import Layout from '../../components/util/Layout'
+import Grid from '../../components/03-organisms/Grid/Grid'
 
-import SearchObservable from '../components/util/SearchObservable'
-import { fromParamsToObject } from '../components/util/Util'
+import SearchObservable from '../../components/util/SearchObservable'
+import { fromParamsToObject } from '../../components/util/Util'
+import './search-results.scss'
 
 class SearchResults extends Component  {
   
@@ -45,10 +46,14 @@ class SearchResults extends Component  {
   render() {
     return(
       <Layout>
-        <section>
+        <section className="o-search-results">
           {this.state.pages.length === 0
-            ? <h2>No results</h2>
-            : <Grid items={this.state.pages} />
+            ? <h2 className="o-search-results__heading">No results</h2>
+            : 
+            <div>
+              <h2 className="o-search-results__heading">Results</h2>
+              <Grid items={this.state.pages} />
+            </div>
           }
         </section>
       </Layout>

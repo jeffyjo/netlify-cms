@@ -10,7 +10,7 @@ const SearchField = ({componentClass, action, value}) => {
       type="search" 
       onChange={action}
       className={"a-search " + componentClass ? componentClass : ''}
-      value={value}
+      value={value || ''}
     />
   )
 }
