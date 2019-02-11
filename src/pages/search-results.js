@@ -46,7 +46,10 @@ class SearchResults extends Component  {
     return(
       <Layout>
         <section>
-          <Grid items={this.state.pages} />
+          {this.state.pages.length === 0
+            ? <h2>No results</h2>
+            : <Grid items={this.state.pages} />
+          }
         </section>
       </Layout>
     )

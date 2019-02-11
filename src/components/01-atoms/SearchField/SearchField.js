@@ -1,13 +1,15 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
+import './SearchField.scss'
+
 const SearchField = ({componentClass, action, value}) => {
 
   return (
     <input 
       type="search" 
       onChange={action}
-      className={"a-text-field " + componentClass ? componentClass : ''}
+      className={"a-search " + componentClass ? componentClass : ''}
       value={value}
     />
   )

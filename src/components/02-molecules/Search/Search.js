@@ -47,8 +47,8 @@ class Search extends Component {
   render() {
       return (
         <div className="m-search">
-          <form onSubmit={(e) => this.onSubmitSearch(e)}>
-            <SearchField componentClass="m-search__input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
+          <form className="m-search__form" onSubmit={(e) => this.onSubmitSearch(e)}>
+            <SearchField componentClass="a-search m-search__form-input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
           </form>
       </div>
     )
