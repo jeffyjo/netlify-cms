@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ArticleTemplate } from '../../templates/article'
+import { ArticleTemplate } from '../../templates/article/article'
 
 const ArticlePagePreview = ({ entry, widgetFor }) => {
 	return (
@@ -10,6 +10,7 @@ const ArticlePagePreview = ({ entry, widgetFor }) => {
       date={widgetFor('date')}
       tags={entry.getIn(['data', 'tags'])}
       image={entry.getIn(['data', 'image'])}
+      headerPosition={widgetFor('headerPosition')}
 		/>
 	)
 }
