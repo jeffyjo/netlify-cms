@@ -5,7 +5,6 @@ import { Link as GatsbyLink } from 'gatsby'
 import './Link.scss'
 
 const Link = ({ children, url, className }) => {
-  console.log('className', className)
   return (
     <GatsbyLink 
       className={"a-link " + (className ? className : '') }
