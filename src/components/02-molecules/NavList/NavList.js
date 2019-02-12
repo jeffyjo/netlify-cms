@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
+import Link from '../../01-atoms/Link/Link'
 
 import './NavList.scss'
 

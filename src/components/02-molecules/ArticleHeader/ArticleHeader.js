@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import DateStamp from '../../01-atoms/DateStamp/DateStamp'
 import Image from '../../01-atoms/Image/Image'
@@ -23,6 +24,14 @@ const ArticleHeader = ({title, date, imageUrl, timeToRead, headerPosition}) => {
       </div>
     </div>
   )
+}
+
+ArticleHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string,
+  imageUrl: PropTypes.string,
+  timeToRead: PropTypes.number,
+  headerPosition: PropTypes.string.isRequired
 }
 
 export default ArticleHeader

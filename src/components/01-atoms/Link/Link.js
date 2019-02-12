@@ -4,11 +4,11 @@ import { Link as GatsbyLink } from 'gatsby'
 
 import './Link.scss'
 
-const Link = ({ children, url, className }) => {
+const Link = ({ children, to, className }) => {
   return (
     <GatsbyLink 
       className={"a-link " + (className ? className : '') }
-      to={url}>
+      to={to}>
         {children}
     </GatsbyLink>
   )
@@ -16,7 +16,8 @@ const Link = ({ children, url, className }) => {
 
 Link.propsTypes = {
   linkText: Proptypes.string.isRequired,
-  url: Proptypes.string.isRequired
+  url: Proptypes.string.isRequired,
+  className: Proptypes.string
 }
 
 export default Link
