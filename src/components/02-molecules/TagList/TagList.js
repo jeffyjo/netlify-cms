@@ -14,7 +14,7 @@ const TagList = ({ tags }) => {
         let fullUrl = `/tags/${tag}`
         
         return (
-          <li key={tag} className="m-taglist__tag"><Link className="a-link--button" url={fullUrl}>{tag}</Link></li>
+          <li key={tag} className="m-taglist__tag"><Link className="a-link--button" to={fullUrl}>{tag}</Link></li>
         )
       })
       : ''}
