@@ -17,7 +17,8 @@ class Search extends Component {
     super(props)
 
     this.state = {
-      searchValue: ''
+      searchValue: '',
+      isEmpty: false
     }
     
     this.setSearchParams = this.setSearchParams.bind(this)
@@ -41,9 +42,11 @@ class Search extends Component {
 
   setSearchParams(e, path = '') {
     let value = e.target.value
-    
+    let isEmpty = value.length > 0 ? false : true
+
     this.setState({
-      searchValue: value
+      searchValue: value,
+      isEmpty: isEmpty
     })
     
     SearchObservable.notify(value)
@@ -64,8 +67,7 @@ class Search extends Component {
         <div className="m-search">
           <form className="m-search__form" onSubmit={(e) => this.onSubmitSearch(e)}>
             <SearchField componentClass="a-search m-search__form-input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
-            {/* Disable button when input length = 0 */}
-            <Button className="m-search__form-submit" type="submit">Search</Button>
+            <Button className="m-search__form-submit" type="submit" disabled={this.state.isEmpty}>Search</Button>
           </form>
       </div>
     )
