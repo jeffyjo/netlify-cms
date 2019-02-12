@@ -33,7 +33,10 @@ class Search extends Component {
 
   getSearchParams() {
     let queryObject = fromParamsToObject()
-    return queryObject.search
+    if(queryObject) {
+      return queryObject.search
+    }
+    return null
   }
 
   setSearchParams(e, path = '') {
@@ -48,7 +51,12 @@ class Search extends Component {
 
   onSubmitSearch(e) {
     e.preventDefault()
-    navigate(`/search-results?${searchKey}=${this.state.searchValue}`)
+
+    if(this.state.searchValue.length === 0) {
+      navigate('/search-results')
+    } else {
+      navigate(`/search-results?${searchKey}=${this.state.searchValue}`)
+    }
   }
 
   render() {

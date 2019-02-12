@@ -27,7 +27,13 @@ class SearchResults extends Component  {
     SearchObservable.subscribe((data) => this.filterResults(data))
     
     const searchQuery = fromParamsToObject()
-    this.filterResults(searchQuery.search)
+    if(searchQuery) {
+      this.filterResults(searchQuery.search)
+    }
+  }
+
+  componentWillUnmount() {
+    SearchObservable.unsubscribe(this)
   }
 
   filterResults(searchValue) {
