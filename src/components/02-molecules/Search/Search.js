@@ -9,6 +9,7 @@ import { searchKey } from '../../util/Const'
 import SearchObservable from '../../util/SearchObservable'
 
 import SearchField from '../../01-atoms/SearchField/SearchField'
+import Button from '../Button/Button'
 import './Search.scss'
 
 class Search extends Component {
@@ -32,7 +33,10 @@ class Search extends Component {
 
   getSearchParams() {
     let queryObject = fromParamsToObject()
-    return queryObject.search
+    if(queryObject) {
+      return queryObject.search
+    }
+    return null
   }
 
   setSearchParams(e, path = '') {
@@ -47,7 +51,12 @@ class Search extends Component {
 
   onSubmitSearch(e) {
     e.preventDefault()
-    navigate(`/search-results?${searchKey}=${this.state.searchValue}`)
+
+    if(this.state.searchValue.length === 0) {
+      navigate('/search-results')
+    } else {
+      navigate(`/search-results?${searchKey}=${this.state.searchValue}`)
+    }
   }
 
   render() {
@@ -55,7 +64,7 @@ class Search extends Component {
         <div className="m-search">
           <form className="m-search__form" onSubmit={(e) => this.onSubmitSearch(e)}>
             <SearchField componentClass="a-search m-search__form-input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
-            <button type="submit" className="m-search__form-submit">Search</button>
+            <Button className="m-search__form-submit" type="submit">Search</Button>
           </form>
       </div>
     )

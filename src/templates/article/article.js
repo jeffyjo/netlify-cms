@@ -5,6 +5,9 @@ import Layout from '../../components/util/Layout'
 import Content, { HTMLContent } from '../../components/util/Content'
 
 import ArticleHeader from '../../components/02-molecules/ArticleHeader/ArticleHeader'
+import TagList from '../../components/02-molecules/TagList/TagList'
+
+import './article.scss'
 
 export const ArticleTemplate = ({ 
   title, 
@@ -13,15 +16,16 @@ export const ArticleTemplate = ({
   date,
   imageUrl,
   timeToRead,
-  headerPosition
+  headerPosition,
+  tags
 }) => {
   const PageContent = contentComponent || Content
-  console.log('headerPosition', headerPosition)
 
   return(
     <article className="o-article">
       <ArticleHeader title={title} date={date} imageUrl={imageUrl} timeToRead={timeToRead} headerPosition={headerPosition}  />
-      <PageContent content={content} />
+      <PageContent content={content} className="o-article__content" />
+      <TagList tags={tags} />
     </article>
   )
 }
@@ -33,7 +37,8 @@ ArticleTemplate.prototypes = {
   date: PropTypes.string,
   imageUrl: PropTypes.string,
   timeToRead: PropTypes.number,
-  headerPosition: PropTypes.string.isRequired 
+  headerPosition: PropTypes.string.isRequired,
+  tags: PropTypes.array
 }
 
 const ArticlePage = ({data}) => {
@@ -54,6 +59,7 @@ const ArticlePage = ({data}) => {
         }
         timeToRead={post.timeToRead}
         headerPosition={post.frontmatter.headerPosition}
+        tags={post.frontmatter.tags}
       />
     </Layout>
   )
@@ -71,6 +77,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         headerPosition
+        tags
         image {
           publicURL
         }

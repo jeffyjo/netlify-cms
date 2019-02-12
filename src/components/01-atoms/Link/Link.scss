@@ -1,0 +1,18 @@
+.a-link {
+  text-decoration: none;
+  
+  &--button {
+    border: 1px solid #eb5b51;
+    border-radius: .25em;
+    padding: .5em 1em;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: background-color .15s ease-in-out;
+
+    &:hover {
+      background-color: #eb5b51;
+    }
+  }
+
+}
