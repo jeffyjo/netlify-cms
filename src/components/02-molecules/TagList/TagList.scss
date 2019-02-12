@@ -1,0 +1,14 @@
+.m-taglist {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m-taglist__tag {
+  margin-right: 2em;
+
+  & .a-link {
+    padding: .5em 1.5em;
+  }
+}
