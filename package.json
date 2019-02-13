@@ -41,18 +41,46 @@
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --passWithNoTests",
+    "test:update": "jest -u",
+    "test:report": "npm run test -- --coverage",
+    "test:watch": "jest --watch",
     "storybook": "start-storybook -p 8765 -c .storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^4.1.11",
+    "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
     "node-sass": "^4.11.0",
     "prettier": "^1.15.3",
+    "react-test-renderer": "^16.8.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      "\\.(css|scss)": "identity-obj-proxy",
+      "\\.(png|jpg|jpeg|svg)": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/.cache/",
+      "<rootDir>/.cache/__tests__/",
+      "<rootDir>/.github/",
+      "<rootDir>/.storybook/",
+      "<rootDir>/.public/"
+    ]
+  },
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
   }
 }
