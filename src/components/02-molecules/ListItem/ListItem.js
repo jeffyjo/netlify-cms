@@ -11,7 +11,10 @@ let ListItem = ({item}) => {
     <li>
       <Link to={url} className="m-list-item">
         <h3 className="m-list-item__title">{title}</h3>
-        <time className="m-list-item__date">{date}</time>
+        {date 
+          ? <time className="m-list-item__date">{date}</time>
+          : null
+        }
       </Link>
     </li>
   )

@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Link } from 'gatsby'
 import Link from '../../01-atoms/Link/Link'
 
 import './NavList.scss'
@@ -12,6 +11,9 @@ const NavList = () => {
       </Link>
       <Link className="m-navlist__item" to="/tags">
         Tags
+      </Link>
+      <Link className="m-navlist__item" to="/custom">
+        Custom
       </Link>
     </div>
   )
