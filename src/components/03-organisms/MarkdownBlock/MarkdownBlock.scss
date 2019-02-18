@@ -1,14 +1,34 @@
 .o-markdown-block {
-  display: flex;
-  justify-content: flex-start;
-}
+	display: flex;
+	justify-content: flex-start;
 
-.o-markdown-block--vertial {
-  flex-direction: column;
-}
+	&--vertical,
+	&--image-bottom {
+		flex-direction: column;
+	}
 
-.o-markdown-block--horisontal {
-  flex-direction: row;
+	&--horisontal,
+	&--image-right {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	&--image-left {
+		flex-direction: row;
+		align-items: center;
+		
+		& .o-markdown-block__text {
+			order: 1;
+		}
+
+		& .o-markdown-block__image { 
+			order: 0;
+		}
+	}
+
+	&--image-top {
+		flex-direction: column-reverse;
+	}
 }
 
 .o-markdown-block__text {
@@ -20,5 +40,5 @@
 }
 
 .o-markdown-block__image-asset {
-  margin: 0;
+	margin: 0;
 }

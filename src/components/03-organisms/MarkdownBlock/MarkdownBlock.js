@@ -10,10 +10,28 @@ const MarkdownBlock = ({item}) => {
   console.log('mdb', body, image, contentOrientation, imagePosition)
 
   let pageContent = body || Content
+  let imagePositionClass = ''
+
+  switch(imagePosition) {
+    case "top":
+      imagePositionClass = "o-markdown-block--image-top"
+      break
+    case "right":
+      imagePositionClass = "o-markdown-block--image-right"
+      break
+    case "bottom":
+      imagePositionClass = "o-markdown-block--image-bottom"
+      break
+    case "left":
+      imagePositionClass = "o-markdown-block--image-left"
+      break;
+    default:
+      break
+  }
 
   return (
     <section className="section">
-      <div className={`o-markdown-block`}>
+      <div className={`o-markdown-block ${contentOrientation ? 'o-markdown-block--vertical' : 'o-markdown-block--horisontal'} ${imagePositionClass}`}>
         <div className="o-markdown-block__text">{pageContent}</div>
         <div className="o-markdown-block__image">
           <Image imageUrl={image.publicURL} className="o-markdown-block__image-asset" />

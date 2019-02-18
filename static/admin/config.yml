@@ -34,4 +34,4 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Image", name: "image", widget: "image", default: null }
           - { label: "Content orientation", name: "contentOrientation", widget: "select", options: [{ label: "Vertical", value: true }, { label: "Horizontal", value: false }] }
-          - { label: "Image position", name: "imagePosition", widget: "select", options: ["top", "bottom", "left", "right"] }
+          - { label: "Image position", name: "imagePosition", widget: "select", options: ["top", "right", "bottom", "left"] }
