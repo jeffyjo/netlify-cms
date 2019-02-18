@@ -1,0 +1,10 @@
+---
+templateKey: article
+title: This is a custom page
+content:
+  - body: Simple small content
+    contentOrientation: vertical
+    image: /img/apple-touch-icon.png
+    imagePosition: bottom
+---
+
