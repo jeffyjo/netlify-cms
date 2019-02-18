@@ -10,7 +10,7 @@ const Image = ({ imageUrl }) => {
 }
 
 Image.proptypes = {
-  imageUrl: PropTypes.string.isRequired
+  imageUrl: PropTypes.string
 }
 
 export default Image

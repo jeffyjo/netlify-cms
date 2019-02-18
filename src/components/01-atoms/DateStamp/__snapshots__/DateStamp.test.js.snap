@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atom | DateStamp DateStamp should render 1`] = `
+<div
+  className="a-date-stamp"
+>
+  18/02/2019
+</div>
+`;

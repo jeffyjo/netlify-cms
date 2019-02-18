@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atom | Link  Link should render 1`] = `
+<a
+  className="a-link link-class"
+  href="http://link.com"
+>
+  Link
+</a>
+`;

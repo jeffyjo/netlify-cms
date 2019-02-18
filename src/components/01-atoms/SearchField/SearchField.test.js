@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchField from './SearchField'
 import renderer from 'react-test-renderer'
+import { render, fireEvent } from 'react-testing-library'
 
 describe('Atom | SearchField', () => {
   let component = null
@@ -31,6 +32,15 @@ describe('Atom | SearchField', () => {
     expect(tree).toMatchSnapshot()
     tree.props.value = 'This is a test'
     expect(tree).toMatchSnapshot()
+  })
+
+  let SearchFieldMock = () => <SearchField componentClass="class" action={() => false} value="test" />
+
+  test('Should change onChange', () => {
+    const { getByValue } = render(<SearchFieldMock />)
+    let el = getByValue('test')
+    expect(el).toHaveAttribute("value", "test")
+    fireEvent.keyPress(el)
   })
 
 })
