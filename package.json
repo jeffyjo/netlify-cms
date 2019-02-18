@@ -54,33 +54,17 @@
     "@storybook/react": "^4.1.11",
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
+    "babel-preset-gatsby": "^0.1.7",
     "css-loader": "^2.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
+    "jest-dom": "^3.1.2",
     "node-sass": "^4.11.0",
     "prettier": "^1.15.3",
-    "react-test-renderer": "^16.8.1",
+    "react-test-renderer": "^16.8.2",
+    "react-testing-library": "^5.8.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
-  },
-  "jest": {
-    "verbose": true,
-    "moduleNameMapper": {
-      "\\.(css|scss)": "identity-obj-proxy",
-      "\\.(png|jpg|jpeg|svg)": "<rootDir>/__mocks__/fileMock.js"
-    },
-    "testPathIgnorePatterns": [
-      "<rootDir>/build/",
-      "<rootDir>/node_modules/",
-      "<rootDir>/.cache/",
-      "<rootDir>/.cache/__tests__/",
-      "<rootDir>/.github/",
-      "<rootDir>/.storybook/",
-      "<rootDir>/.public/"
-    ]
-  },
-  "babel": {
-    "presets": ["@babel/preset-env", "@babel/preset-react"]
   }
 }
