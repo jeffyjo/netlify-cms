@@ -1,5 +1,5 @@
 ---
-templateKey: article
+templateKey: custom
 title: This is a custom page
 content:
   - body: Simple small content
