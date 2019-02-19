@@ -1,0 +1,38 @@
+.p-custom {
+
+}
+
+.p-custom__title {
+
+}
+
+.p-custom__content {
+
+	& .p-custom__content-block {
+		display: inline-block;
+	}
+
+	&--col-1 {
+		& .p-custom__content-block {
+			width: 100%;
+		}
+	}
+
+	&--col-2 {
+		& .p-custom__content-block {
+			width: 50%;
+		}
+	}
+
+	&--col-3 {
+		& .p-custom__content-block {
+			width: 33.3333333333%
+		}
+	}
+
+	&--col-4 {
+		& .p-custom__content-block {
+			width: 25%;
+		}
+	}
+}

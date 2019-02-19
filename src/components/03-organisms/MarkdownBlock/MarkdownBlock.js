@@ -5,12 +5,13 @@ import Image from '../../01-atoms/Image/Image'
 
 import './MarkdownBlock.scss'
 
-const MarkdownBlock = ({item}) => {
+const MarkdownBlock = ({ item, className }) => {
   const { body, image, contentOrientation, imagePosition } = item
   console.log('mdb', body, image, contentOrientation, imagePosition)
 
   let pageContent = body || Content
   let imagePositionClass = ''
+  let contentOrientationClass = ''
 
   switch(imagePosition) {
     case "top":
@@ -29,9 +30,11 @@ const MarkdownBlock = ({item}) => {
       break
   }
 
+  contentOrientationClass = contentOrientation === 'vertical' ? 'o-markdown-block--vertical' : 'o-markdown-block--horizontal'
+
   return (
-    <section className="section">
-      <div className={`o-markdown-block ${contentOrientation ? 'o-markdown-block--vertical' : 'o-markdown-block--horisontal'} ${imagePositionClass}`}>
+    <section className={`section ${className}`}>
+      <div className={`o-markdown-block ${contentOrientationClass} ${imagePositionClass}`}>
         <div className="o-markdown-block__text">{pageContent}</div>
         <div className="o-markdown-block__image">
           <Image imageUrl={image.publicURL} className="o-markdown-block__image-asset" />

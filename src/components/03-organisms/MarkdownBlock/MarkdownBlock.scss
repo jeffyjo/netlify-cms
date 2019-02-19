@@ -1,13 +1,14 @@
 .o-markdown-block {
 	display: flex;
-	justify-content: flex-start;
+	// justify-content: flex-start;
+	align-items: center;
 
 	&--vertical,
 	&--image-bottom {
 		flex-direction: column;
 	}
 
-	&--horisontal,
+	&--horizontal,
 	&--image-right {
 		flex-direction: row;
 		align-items: center;
@@ -16,7 +17,7 @@
 	&--image-left {
 		flex-direction: row;
 		align-items: center;
-		
+
 		& .o-markdown-block__text {
 			order: 1;
 		}

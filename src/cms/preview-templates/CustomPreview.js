@@ -9,6 +9,7 @@ const CustomPagePreview = ({ entry, widgetFor }) => {
       content={entry.getIn(['data', 'content'],)}
       contentOrientation={entry.getIn(['data', 'contentOrientation'])}
       imagePosition={entry.getIn(['data', 'imagePosition'])}
+      columns={entry.getIn(['data', 'columns'])}
     />
   )
 }
