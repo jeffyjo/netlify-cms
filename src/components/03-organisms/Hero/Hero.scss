@@ -3,6 +3,11 @@
   min-height: 20em;
   display: flex;
   
+  // Background Image
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   &--warm {
     background: rgba(255, 75, 75, 1);
     color: #f2f2f2;

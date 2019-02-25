@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../../components/util/Layout'
 import MarkdownBlock from '../../components/03-organisms/MarkdownBlock/MarkdownBlock'
@@ -12,17 +12,17 @@ export const CustomTemplate = ({
   title, 
   content,
   columns,
-  heroPosition
+  heroPosition,
+  heroBackground,
+  hero
 }) => {
-  console.log('content', content)
   let colunmClass = columns ? `p-custom__content--col-${columns}` : ''
   return (
     <div className={`p-custom ${colunmClass}`}>
-      <Hero title={title} className={heroPosition ? heroPosition : ''} />
+      <Hero {...hero} />
         <div className="p-custom__content">
           {content 
             ? content.map( (contentEl, i) => {
-              console.log('contentEl', contentEl)
               return <MarkdownBlock key={`mdb${i}`} item={contentEl} className="p-custom__content-block" />
             }) 
             : null
@@ -33,14 +33,22 @@ export const CustomTemplate = ({
 }
 
 export const CustomPage = ({ data }) => {
-  let { title, columns, content, heroPosition } = data.markdownRemark.frontmatter
+  let { title, columns, content, heroPosition, heroBackground } = data.markdownRemark.frontmatter
+  const hero = {
+    title,
+    heroPosition,
+    heroBackground
+  }
+
   return (
     <Layout>
-      <CustomTemplate 
+      <CustomTemplate
+        hero={hero} 
         title={title}
         columns={columns}
         content={content}
         heroPosition={heroPosition}
+        heroBackground={heroBackground}
       />
     </Layout>
   )
@@ -62,6 +70,9 @@ export const PageQuery = graphql`
         title
         columns
         heroPosition
+        heroBackground {
+          publicURL
+        }
         content {
           body
           contentOrientation
