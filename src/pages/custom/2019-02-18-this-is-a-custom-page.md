@@ -2,7 +2,7 @@
 templateKey: custom
 title: This is a custom page
 columns: 3
-heroPosition: Middle center
+heroPosition: o-hero--center o-hero--middle
 content:
   - body: Simple small content
     contentOrientation: vertical
