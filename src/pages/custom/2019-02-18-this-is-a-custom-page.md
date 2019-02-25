@@ -2,6 +2,7 @@
 templateKey: custom
 title: This is a custom page
 columns: 3
+heroPosition: top
 content:
   - body: Simple small content
     contentOrientation: vertical

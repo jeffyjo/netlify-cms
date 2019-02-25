@@ -1,46 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../../components/util/Layout'
 import MarkdownBlock from '../../components/03-organisms/MarkdownBlock/MarkdownBlock'
+import Hero from '../../components/03-organisms/Hero/Hero'
 
 import './custom.scss'
 
 export const CustomTemplate = ({ 
   title, 
   content,
-  columns
+  columns,
+  heroPosition
 }) => {
-
-  let colunmClass = `p-custom__content--col-${columns}`
-
-  console.log('columns', columns, typeof columns)
+  console.log('title', title)
+  console.log('content', content)
+  console.log('columns', columns)
+  console.log('heroPosition', heroPosition)
+  let colunmClass = columns ? `p-custom__content--col-${columns.toString()}` : ''
   return (
     <Layout>
       <div className={`p-custom ${colunmClass}`}>
-        <h1 className="p-custom__title">{title}</h1>
-        <div className="p-custom__content">
+      {/* <Hero title={title} className="o-hero--center" /> */}
+        {/* <div className="p-custom__content">
           {content 
             ? content.map( (contentEl, i) => {
-              console.log('contentEl', contentEl)
               return <MarkdownBlock key={`mdb${i}`} item={contentEl} className="p-custom__content-block" />
             }) 
             : null
           }
-        </div>
+        </div> */}
       </div>
     </Layout>
   )
 }
 
 export const CustomPage = ({ data }) => {
-  let { title, columns, content } = data.markdownRemark.frontmatter
+  let { title, columns, content, heroPosition } = data.markdownRemark.frontmatter
   return (
     <CustomTemplate 
       title={title}
       columns={columns}
       content={content}
+      heroPosition={heroPosition}
     />
   )
 }
@@ -50,7 +53,7 @@ export default CustomPage
 CustomTemplate.propTypes = {
   title: PropTypes.string,
   columns: PropTypes.number,
-  content: PropTypes.array
+  content: PropTypes.object
 }
 
 export const PageQuery = graphql`
@@ -60,6 +63,7 @@ export const PageQuery = graphql`
       frontmatter {
         title
         columns
+        heroPosition
         content {
           body
           contentOrientation

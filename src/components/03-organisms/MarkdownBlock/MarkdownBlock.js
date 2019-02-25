@@ -7,7 +7,6 @@ import './MarkdownBlock.scss'
 
 const MarkdownBlock = ({ item, className }) => {
   const { body, image, contentOrientation, imagePosition } = item
-  console.log('mdb', body, image, contentOrientation, imagePosition)
 
   let pageContent = body || Content
   let imagePositionClass = ''
