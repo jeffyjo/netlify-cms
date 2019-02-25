@@ -1,7 +1,7 @@
 ---
 templateKey: custom
 title: This is a custom page
-columns: 3
+columns: "3"
 heroPosition: o-hero--center o-hero--middle
 content:
   - body: Simple small content
