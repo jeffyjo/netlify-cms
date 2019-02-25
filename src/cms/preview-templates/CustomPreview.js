@@ -3,12 +3,20 @@ import PropTypes from 'prop-types'
 import { CustomTemplate } from '../../templates/custom/custom'
 
 const CustomPagePreview = ({ entry, widgetFor }) => {
+  const data = entry.get('data').toJS()
+  let { content } = data
+  content.map( contentItem => {
+    contentItem.image = {
+      publicURL: contentItem.image
+    }
+  })
+
   return (
     <CustomTemplate 
       title={entry.getIn(['data', 'title'])}
-      columns={widgetFor('columns')}
+      columns={entry.getIn(['data', 'columns'])}
       heroPosition={entry.getIn(['data', 'heroPosition'])}
-      content={entry.getIn(['data', 'content'])}
+      content={content}
     />
   )
 }

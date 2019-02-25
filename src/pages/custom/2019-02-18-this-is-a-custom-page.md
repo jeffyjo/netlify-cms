@@ -29,4 +29,3 @@ content:
     image: /img/apple-touch-icon.png
     imagePosition: bottom
 ---
-

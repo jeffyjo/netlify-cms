@@ -14,37 +14,35 @@ export const CustomTemplate = ({
   columns,
   heroPosition
 }) => {
-  console.log('title', title)
   console.log('content', content)
-  console.log('columns', columns)
-  console.log('heroPosition', heroPosition)
-  let colunmClass = columns ? `p-custom__content--col-${columns.toString()}` : ''
+  let colunmClass = columns ? `p-custom__content--col-${columns}` : ''
   return (
-    <Layout>
-      <div className={`p-custom ${colunmClass}`}>
-      <Hero title={title} className="o-hero--center" />
-        {/* <div className="p-custom__content">
+    <div className={`p-custom ${colunmClass}`}>
+      <Hero title={title} className={heroPosition ? heroPosition : ''} />
+        <div className="p-custom__content">
           {content 
             ? content.map( (contentEl, i) => {
+              console.log('contentEl', contentEl)
               return <MarkdownBlock key={`mdb${i}`} item={contentEl} className="p-custom__content-block" />
             }) 
             : null
           }
-        </div> */}
-      </div>
-    </Layout>
+        </div>
+    </div>
   )
 }
 
 export const CustomPage = ({ data }) => {
   let { title, columns, content, heroPosition } = data.markdownRemark.frontmatter
   return (
-    <CustomTemplate 
-      title={title}
-      columns={columns}
-      content={content}
-      heroPosition={heroPosition}
-    />
+    <Layout>
+      <CustomTemplate 
+        title={title}
+        columns={columns}
+        content={content}
+        heroPosition={heroPosition}
+      />
+    </Layout>
   )
 }
 
@@ -52,8 +50,8 @@ export default CustomPage
 
 CustomTemplate.propTypes = {
   title: PropTypes.string,
-  columns: PropTypes.number,
-  content: PropTypes.object
+  columns: PropTypes.string,
+  content: PropTypes.array
 }
 
 export const PageQuery = graphql`

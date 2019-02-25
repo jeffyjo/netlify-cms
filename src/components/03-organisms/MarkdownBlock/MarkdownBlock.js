@@ -7,8 +7,11 @@ import './MarkdownBlock.scss'
 
 const MarkdownBlock = ({ item, className }) => {
   const { body, image, contentOrientation, imagePosition } = item
+  console.log('body', body)
+  console.log('contentOrientation', contentOrientation)
+  console.log('imagePosition', imagePosition)
 
-  let pageContent = body || Content
+  const PageContent = HTMLContent || Content
   let imagePositionClass = ''
   let contentOrientationClass = ''
 
@@ -34,9 +37,9 @@ const MarkdownBlock = ({ item, className }) => {
   return (
     <section className={`section ${className}`}>
       <div className={`o-markdown-block ${contentOrientationClass} ${imagePositionClass}`}>
-        <div className="o-markdown-block__text">{pageContent}</div>
+        <PageContent content={body} className="o-markdown-block__text" />
         <div className="o-markdown-block__image">
-          <Image imageUrl={image.publicURL} className="o-markdown-block__image-asset" />
+          {image ? <Image imageUrl={image.publicURL} className="o-markdown-block__image-asset" /> : null}
         </div>
       </div>
     </section>
@@ -44,7 +47,15 @@ const MarkdownBlock = ({ item, className }) => {
 }
 
 MarkdownBlock.propTypes = {
-  
+  item: PropTypes.shape({
+    body: PropTypes.string,
+    image: PropTypes.shape({
+      publicURL: PropTypes.string
+    }),
+    contentOrientation: PropTypes.string,
+    imagePosition: PropTypes.string
+  }),
+  className: PropTypes.string
 }
 
 export default MarkdownBlock

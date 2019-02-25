@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import './Hero.scss'
 
 const Hero = ({ title, backgroundImage, className}) => {
-	console.log('className', className)
-
 	backgroundImage = backgroundImage ? backgroundImage : ''
 
 	return (
