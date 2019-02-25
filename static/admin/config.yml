@@ -28,6 +28,7 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "custom" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Columns", name: "columns", widget: "select", options: [ {label: 1, value: "1"}, {label: 2, value: "2"}, {label: 3, value: "3"}, {label: 4, value: "4"} ] }
+      - { label: "Hero background", name: "heroBackground", widget: "image", default: null, media_library: { config: { multiple: false } } }
       - label: "Hero position" 
         name: "heroPosition" 
         widget: "select" 
