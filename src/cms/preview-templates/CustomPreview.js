@@ -11,17 +11,19 @@ const CustomPagePreview = ({ entry, widgetFor }) => {
     }
   })
 
-  let heroBackground = {
-    publicURL: entry.getIn(['data', 'heroBackground'])
+  let hero = {
+    title: entry.getIn(['data', 'title']),
+    heroPosition: entry.getIn(['data', 'heroPosition']),
+    heroBackground: {
+      publicURL: entry.getIn(['data', 'heroBackground'])
+    }
   }
 
   return (
     <CustomTemplate 
-      title={entry.getIn(['data', 'title'])}
       columns={entry.getIn(['data', 'columns'])}
-      heroPosition={entry.getIn(['data', 'heroPosition'])}
-      heroBackground={heroBackground}
       content={content}
+      hero={hero}
     />
   )
 }

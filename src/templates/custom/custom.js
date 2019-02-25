@@ -9,13 +9,11 @@ import Hero from '../../components/03-organisms/Hero/Hero'
 import './custom.scss'
 
 export const CustomTemplate = ({ 
-  title, 
   content,
   columns,
-  heroPosition,
-  heroBackground,
   hero
 }) => {
+  console.log('hero', hero)
   let colunmClass = columns ? `p-custom__content--col-${columns}` : ''
   return (
     <div className={`p-custom ${colunmClass}`}>
