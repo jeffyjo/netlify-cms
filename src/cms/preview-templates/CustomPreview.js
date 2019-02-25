@@ -6,9 +6,9 @@ const CustomPagePreview = ({ entry, widgetFor }) => {
   return (
     <CustomTemplate 
       title={entry.getIn(['data', 'title'])}
-      columns={entry.getIn(['data', 'columns'])}
+      columns={widgetFor('columns')}
       heroPosition={entry.getIn(['data', 'heroPosition'])}
-      // content={widgetFor('content')}
+      content={entry.getIn(['data', 'content'])}
     />
   )
 }

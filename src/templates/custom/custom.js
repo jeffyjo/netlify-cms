@@ -22,7 +22,7 @@ export const CustomTemplate = ({
   return (
     <Layout>
       <div className={`p-custom ${colunmClass}`}>
-      {/* <Hero title={title} className="o-hero--center" /> */}
+      <Hero title={title} className="o-hero--center" />
         {/* <div className="p-custom__content">
           {content 
             ? content.map( (contentEl, i) => {

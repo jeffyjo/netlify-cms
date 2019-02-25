@@ -27,7 +27,7 @@ collections:
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "custom" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Columns", name: "columns", widget: "select", options: [1, 2, 3, 4], default: [1]}
+      - { label: "Columns", name: "columns", widget: "select", options: [1, 2, 3, 4] }
       - { label: "Hero position", name: "heroPosition", widget: "select", options: [ {"Upper left": "o-hero--top o-hero--left" }, { "Upper center": "o-hero--top o-hero--middle" }, { "Upper right": "o-hero--top o-hero--right" }, { "Middle left": "o-hero--center o-hero--left" }, { "Middle center": "o-hero--center o-hero--middle" }, { "Middle right": "o-hero--center o-hero--right" }, { "Bottom left": "o-hero--bottom o-hero--left" }, { "Bottom center": "o-hero--bottom o-hero--middle" }, { "Bottom right": "o-hero--bottom o-hero--right" } ] }
       - label: "Content"
         name: "content" 
