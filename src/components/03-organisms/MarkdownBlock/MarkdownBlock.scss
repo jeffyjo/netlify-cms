@@ -11,7 +11,8 @@
 	&--horizontal,
 	&--image-right {
 		flex-direction: row;
-		align-items: center;
+    align-items: center;
+    justify-content: space-around;
 	}
 
 	&--image-left {

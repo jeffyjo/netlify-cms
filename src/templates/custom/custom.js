@@ -13,7 +13,7 @@ export const CustomTemplate = ({
   columns,
   hero
 }) => {
-  console.log('hero', hero)
+  // console.log('hero', hero)
   let colunmClass = columns ? `p-custom__content--col-${columns}` : ''
   return (
     <div className={`p-custom ${colunmClass}`}>
