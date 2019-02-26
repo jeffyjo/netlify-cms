@@ -15,6 +15,9 @@ const NavList = () => {
       <Link className="m-navlist__item" to="/custom">
         Custom
       </Link>
+      <Link className="m-navlist__item" to="/contact">
+        Contact
+      </Link>
     </div>
   )
 }

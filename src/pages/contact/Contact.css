@@ -1,0 +1,50 @@
+.o-form {
+  margin: 2rem auto;  
+  max-width: 30rem;
+}
+
+.o-form__group {
+  margin: 1rem 0;
+}
+
+.o-form__group-label {
+  margin-right: 2rem;
+}
+
+.o-form__group-input,
+.o-form__group-text {
+  border: 1px solid #2f2f2f77;
+  outline: none;
+  padding: .5em;
+  border-radius: .25em;
+  transition: border-color .2s ease;
+  margin: .25rem 0 1rem;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.o-form__group-input:focus,
+.o-form__group-text:focus {
+  border-color: #2f2f2fff;
+}
+
+.o-form__group-text {
+  resize: none;
+}
+
+.o-form__group-submit {
+  border: 1px solid #eb5b51;
+  border-radius: .25em;
+  padding: .5em 1em;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color .15s ease-in-out;
+  width: 25%;
+  display: block;
+}
+
+.o-form__group-submit:hover {
+  background: #eb5b51;
+}
