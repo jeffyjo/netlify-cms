@@ -29,7 +29,8 @@ const Contact = () => {
         {/* <form onSubmit={e => submit(e)} className="o-form" data-netlify="true"> */}
         
         {/* Postback */}
-        <form name="contact" className="o-form" data-netlify="true" method="POST">
+        <form name="contact" className="o-form" data-netlify="true" method="POST" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="bot-field" />
           <div className="o-form__group">
             <label className="o-form__group-label">Name</label>
             <input className="o-form__group-input" data-input="name" name="name" />
