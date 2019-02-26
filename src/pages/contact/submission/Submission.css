@@ -1,0 +1,32 @@
+.p-submission {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.p-submission__header {
+
+}
+
+.p-submission__lead {
+
+}
+
+.p-submission__link {
+  text-decoration: none;
+  position: relative;
+}
+
+.p-submission__link::after {
+  content: '';
+  width: 100%;
+  border: 1px solid transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: border-color .1s ease-in-out;
+}
+
+.p-submission__link:hover::after {
+  border-color: #2f2f2f;
+}

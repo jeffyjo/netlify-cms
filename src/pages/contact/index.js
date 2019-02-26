@@ -29,18 +29,18 @@ const Contact = () => {
         {/* <form onSubmit={e => submit(e)} className="o-form" data-netlify="true"> */}
         
         {/* Postback */}
-        <form name="contactForm" className="o-form" data-netlify="true" method="POST" data-netlify-honeypot="bot-field">
+        <form name="contact" action="/contact/submission" className="o-form" data-netlify="true" method="POST" data-netlify-honeypot="bot-field">
           <input type="hidden" name="bot-field" />
           <div className="o-form__group">
-            <label className="o-form__group-label">Name</label>
+            <label className="o-form__group-label" htmlFor="name">Name</label>
             <input className="o-form__group-input" data-input="name" name="name" />
           </div>
           <div className="o-form__group">
-            <label className="o-form__group-label">E-mail</label>
+            <label className="o-form__group-label" htmlFor="email">E-mail</label>
             <input className="o-form__group-input" data-input="email" name="email" />
           </div>
           <div className="o-form__group">
-            <label className="o-form__group-label">Message</label>
+            <label className="o-form__group-label" htmlFor="message">Message</label>
             <textarea className="o-form__group-text" data-input="message" name="message" cols="50" rows="10"></textarea>
           </div>
           <button className="o-form__group-submit" type="submit">Send</button>
