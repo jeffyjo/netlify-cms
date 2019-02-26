@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: feat/custom-page
 
 media_folder: static/img
 public_folder: /img
@@ -19,3 +19,34 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list", default: ["article"] }
       - { label: "Header position", name: "headerPosition", widget: "select", options: ["left", "center", "right"], default: ["center"] }
+  - name: "custom"
+    label: "Custom"
+    folder: "src/pages/custom"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "custom" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Hero background", name: "heroBackground", widget: "image", default: null, media_library: { config: { multiple: false } } }
+      - label: "Hero position" 
+        name: "heroPosition" 
+        widget: "select" 
+        options: 
+          - { label: "Top Left", value: "o-hero--top o-hero--left" }
+          - { label: "Top Center", value: "o-hero--top o-hero--middle" }
+          - { label: "Top Right", value: "o-hero--top o-hero--right" }
+          - { label: "Middle Left", value: "o-hero--center o-hero--left" }
+          - { label: "Middle Center", value: "o-hero--center o-hero--middle" }
+          - { label: "Middle Right", value: "o-hero--center o-hero--right" }
+          - { label: "Bottom Left", value: "o-hero--bottom o-hero--left" }
+          - { label: "Bottom Center", value: "o-hero--bottom o-hero--middle" }
+          - { label: "Bottom Right", value: "o-hero--bottom o-hero--right" }
+      - { label: "Columns", name: "columns", widget: "select", options: [ {label: 1, value: "1"}, {label: 2, value: "2"}, {label: 3, value: "3"}, {label: 4, value: "4"} ] }
+      - label: "Content"
+        name: "content" 
+        widget: "list"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Image", name: "image", widget: "image", default: null }
+          - { label: "Content orientation", name: "contentOrientation", widget: "select", options: [{ label: "Vertical", value: "vertical" }, { label: "Horizontal", value: "horizotal" }], default: ["vertical"] }
+          - { label: "Image position", name: "imagePosition", widget: "select", options: ["top", "right", "bottom", "left"], default:["bottom"] }

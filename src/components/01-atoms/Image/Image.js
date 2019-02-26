@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import './Image.scss'
 
-const Image = ({ imageUrl }) => {
+const Image = ({ imageUrl, className }) => {
   return (
-    <img className="a-image" src={imageUrl} alt={imageUrl} />
+    <img className={`a-image ${className ? className : ''}`} src={imageUrl} alt={imageUrl} />
   )
 }
 
