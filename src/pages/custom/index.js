@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../../components/util/Layout'
-import Content, { HTMLContent } from '../../components/util/Content'
 import ListItem from '../../components/02-molecules/ListItem/ListItem.js'
 
 export const CustomList = ({ data }) => {
@@ -20,7 +19,11 @@ export const CustomList = ({ data }) => {
 } 
 
 CustomList.propTypes = {
-
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array
+    })
+  })
 }
 
 export default CustomList

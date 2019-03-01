@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Layout from '../../components/util/Layout'
 
@@ -7,21 +6,22 @@ import './Contact.css'
 
 const Contact = () => {
   
-  const submit = (e) => {
-    e.preventDefault()
-    let form = e.target
-    let inputs = form.querySelectorAll('[data-input]')
-    let serializedValues = '' 
-    inputs.forEach((e,i) => serializedValues = serializedValues + serialize(e.getAttribute('name'), e.value) )
-    serializedValues = serializedValues.slice(0, serializedValues.lastIndexOf('&'))
+  // Remember to enable for AJAZX
+  // const submit = (e) => {
+  //   e.preventDefault()
+  //   let form = e.target
+  //   let inputs = form.querySelectorAll('[data-input]')
+  //   let serializedValues = '' 
+  //   inputs.forEach((e,i) => serializedValues = serializedValues + serialize(e.getAttribute('name'), e.value) )
+  //   serializedValues = serializedValues.slice(0, serializedValues.lastIndexOf('&'))
     
-    // Submit form
-    console.log('serializedValues', serializedValues)
-  }
+  //   // Submit form
+  //   console.log('serializedValues', serializedValues)
+  // }
 
-  const serialize = (key, value) => {
-    return `${key}=${value}&`
-  }
+  // const serialize = (key, value) => {
+  //   return `${key}=${value}&`
+  // }
   
   return (
     <Layout>
@@ -47,10 +47,6 @@ const Contact = () => {
         </form>
     </Layout>
   )
-}
-
-Contact.propTypes = {
-
 }
 
 export default Contact
