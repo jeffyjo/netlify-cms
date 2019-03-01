@@ -9,7 +9,7 @@ export const CustomList = ({ data }) => {
   const { edges : customPages } = data.allMarkdownRemark
   return (
     <Layout>
-      <section className="section">
+      <section className="o-search-results">
         <h1>CustomList</h1>
         <ul className="o-list">
           {customPages.map( (page, i) => <ListItem key={`cs${i}`} item={page} />)}
