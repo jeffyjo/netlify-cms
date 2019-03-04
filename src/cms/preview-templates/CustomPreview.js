@@ -16,7 +16,8 @@ const CustomPagePreview = ({ entry, getAsset }) => {
     heroPosition: data.heroPosition,
     heroBackground: {
       publicURL: getAsset(entry.getIn(['data', 'heroBackground'])).public_path
-    }
+    },
+    heroTextColor: data.heroTextColor
   }
 
   return (

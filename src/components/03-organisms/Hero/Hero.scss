@@ -1,7 +1,9 @@
 .o-hero {
+  box-sizing: border-box;
   width: 100%;
   min-height: 20em;
   display: flex;
+  padding: 2rem;
   
   // Background Image
   background-repeat: no-repeat;
@@ -45,4 +47,12 @@
 
 .o-hero__title {
   margin: 0;
+
+  &--dark {
+    color: #2f2f2f;
+  }
+  
+  &--light {
+    color: #f2f2f2;
+  }
 }

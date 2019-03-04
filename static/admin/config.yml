@@ -28,6 +28,7 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "custom" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Hero background", name: "heroBackground", widget: "image", default: null, media_library: { config: { multiple: false } } }
+      - { label: "Hero Text color", name: "heroTextColor", widget: "select", options: [ { label: "Dark", value: "o-hero__title--dark" }, { label: "Light", value: "o-hero__title--light" } ] }
       - label: "Hero position" 
         name: "heroPosition" 
         widget: "select" 
