@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 
 import './Hero.scss'
 
-const Hero = ({ title, heroPosition, heroBackground }) => {
+const Hero = ({ title, heroPosition, heroBackground, heroTextColor }) => {
   heroBackground = heroBackground ? heroBackground : ''
   heroPosition = heroPosition ? heroPosition : ''
+  heroTextColor = heroTextColor ? heroTextColor : ''
 
 	return (
-		<div className={`o-hero ${heroPosition}`} style={{ backgroundImage: `url(${heroBackground.publicURL})` }}>
+		<div className={`o-hero ${heroPosition} ${heroTextColor}`} style={{ backgroundImage: `url(${heroBackground.publicURL})` }}>
 			<h1 className="o-hero__title">{title}</h1>
 		</div>
 	)

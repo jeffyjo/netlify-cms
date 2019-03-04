@@ -31,11 +31,12 @@ export const CustomTemplate = ({
 }
 
 export const CustomPage = ({ data }) => {
-  let { title, columns, content, heroPosition, heroBackground } = data.markdownRemark.frontmatter
+  let { title, columns, content, heroPosition, heroBackground, heroTextColor } = data.markdownRemark.frontmatter
   const hero = {
     title,
     heroPosition,
-    heroBackground
+    heroBackground,
+    heroTextColor
   }
 
   return (
@@ -68,6 +69,7 @@ export const PageQuery = graphql`
         title
         columns
         heroPosition
+        heroTextColor
         heroBackground {
           publicURL
         }
