@@ -9,7 +9,8 @@ const Hero = ({ title, heroPosition, heroBackground, heroTextColor }) => {
   heroTextColor = heroTextColor ? heroTextColor : ''
 
 	return (
-		<div className={`o-hero ${heroPosition}`} style={{ backgroundImage: `url(${heroBackground.publicURL})` }}>
+		<div className={`o-hero ${heroPosition}`}>
+      <div className="o-hero__background" style={{ backgroundImage: `url(${heroBackground.publicURL})` }}></div>
 			<h1 className={`o-hero__title ${heroTextColor}`}>{title}</h1>
 		</div>
 	)
