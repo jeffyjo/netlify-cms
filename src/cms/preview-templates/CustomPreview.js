@@ -5,9 +5,9 @@ import { CustomTemplate } from '../../templates/custom/custom'
 const CustomPagePreview = ({ entry, getAsset }) => {
   const data = entry.get('data').toJS()
   let { content, columns } = data
-  content.map( contentItem => {
+  content.map(contentItem => {
     contentItem.image = {
-      publicURL: getAsset(contentItem.image).public_path
+      publicURL: getAsset(contentItem.image).public_path,
     }
   })
 
@@ -15,25 +15,19 @@ const CustomPagePreview = ({ entry, getAsset }) => {
     title: data.title,
     heroPosition: data.heroPosition,
     heroBackground: {
-      publicURL: getAsset(entry.getIn(['data', 'heroBackground'])).public_path
+      publicURL: getAsset(entry.getIn(['data', 'heroBackground'])).public_path,
     },
-    heroTextColor: data.heroTextColor
+    heroTextColor: data.heroTextColor,
   }
 
-  return (
-    <CustomTemplate 
-      columns={columns}
-      content={content}
-      hero={hero}
-    />
-  )
+  return <CustomTemplate columns={columns} content={content} hero={hero} />
 }
 
 CustomPagePreview.proptTypes = {
   entry: PropTypes.shape({
-    getIn: PropTypes.func
+    getIn: PropTypes.func,
   }),
-  widgetFor: PropTypes.func
+  widgetFor: PropTypes.func,
 }
 
 export default CustomPagePreview

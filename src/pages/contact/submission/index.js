@@ -10,7 +10,9 @@ const Submission = () => {
       <div className="p-submission">
         <h1 className="p-submission__header">Submission</h1>
         <p className="p-submission__lead">We'll be right back!</p>
-        <Link className="p-submission__link" to="/">Home</Link>
+        <Link className="p-submission__link" to="/">
+          Home
+        </Link>
       </div>
     </Layout>
   )

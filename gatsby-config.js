@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Netlify & Gatsby example',
-    description: 'This repo contains an example of how Netlify cms and Gatsby can be used to produce a SSCMS',
+    description:
+      'This repo contains an example of how Netlify cms and Gatsby can be used to produce a SSCMS',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -53,8 +54,8 @@ module.exports = {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
               destinationDir: 'static',
-            }
-          }
+            },
+          },
         ],
       },
     },
@@ -65,9 +66,9 @@ module.exports = {
       },
     },
     {
-      resolve:'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
-        develop: true,            // Activates purging in npm run develop
+        develop: true, // Activates purging in npm run develop
         purgeOnly: [`${__dirname}/src/styles/style.scss`], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins

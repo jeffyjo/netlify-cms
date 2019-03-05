@@ -9,21 +9,27 @@ import TagList from '../../components/02-molecules/TagList/TagList'
 
 import './article.scss'
 
-export const ArticleTemplate = ({ 
-  title, 
-  content, 
-  contentComponent, 
+export const ArticleTemplate = ({
+  title,
+  content,
+  contentComponent,
   date,
   imageUrl,
   timeToRead,
   headerPosition,
-  tags
+  tags,
 }) => {
   const PageContent = contentComponent || Content
 
-  return(
+  return (
     <article className="o-article">
-      <ArticleHeader title={title} date={date} imageUrl={imageUrl} timeToRead={timeToRead} headerPosition={headerPosition}  />
+      <ArticleHeader
+        title={title}
+        date={date}
+        imageUrl={imageUrl}
+        timeToRead={timeToRead}
+        headerPosition={headerPosition}
+      />
       <PageContent content={content} className="o-article__content" />
       <TagList tags={tags} />
     </article>
@@ -38,24 +44,22 @@ ArticleTemplate.prototypes = {
   imageUrl: PropTypes.string,
   timeToRead: PropTypes.number,
   headerPosition: PropTypes.string.isRequired,
-  tags: PropTypes.array
+  tags: PropTypes.array,
 }
 
-const ArticlePage = ({data}) => {
+const ArticlePage = ({ data }) => {
   // Contains all data
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <ArticleTemplate 
+      <ArticleTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
         date={post.frontmatter.date}
         imageUrl={
-          post.frontmatter.image 
-          ? post.frontmatter.image.publicURL
-          : ''
+          post.frontmatter.image ? post.frontmatter.image.publicURL : ''
         }
         timeToRead={post.timeToRead}
         headerPosition={post.frontmatter.headerPosition}
@@ -68,8 +72,8 @@ const ArticlePage = ({data}) => {
 export default ArticlePage
 
 export const pageQuery = graphql`
-  query articleQuery($id: String!){
-    markdownRemark(id: { eq: $id}) {
+  query articleQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       id
       html
       timeToRead

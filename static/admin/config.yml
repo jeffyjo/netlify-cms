@@ -19,6 +19,7 @@ collections:
 			- { label: "Body", name: "body", widget: "markdown" }
 			- { label: "Tags", name: "tags", widget: "list", default: ["article"] }
 			- { label: "Header position", name: "headerPosition", widget: "select", options: ["left", "center", "right"], default: ["center"] }
+			
 	- name: "custom"
 		label: "Custom"
 		folder: "src/pages/custom"

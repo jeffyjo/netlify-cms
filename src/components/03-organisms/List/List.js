@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 import ListItem from '../../02-molecules/ListItem/ListItem'
 import './List.scss'
 
-let List = ({items}) => {
+let List = ({ items }) => {
   return (
     <ul className="o-list">
       {items ? items.map((item, i) => <ListItem item={item} key={i} />) : null}
@@ -13,7 +13,7 @@ let List = ({items}) => {
 }
 
 List.propTypes = {
-  items: propTypes.array
+  items: propTypes.array,
 }
 
 export default List

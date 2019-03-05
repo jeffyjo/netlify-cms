@@ -6,7 +6,7 @@ import './LinkIcon.scss'
 
 import logo from '../../../img/logo.svg'
 
-const LinkIcon = ({url}) => {
+const LinkIcon = ({ url }) => {
   return (
     <Link to={url} className="a-logo" title="Logo">
       <img src={logo} alt="Pentia" />
@@ -15,7 +15,7 @@ const LinkIcon = ({url}) => {
 }
 
 LinkIcon.propTypes = {
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 }
 
 export default LinkIcon

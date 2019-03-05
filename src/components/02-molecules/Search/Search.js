@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { navigate } from 'gatsby'
 
-import { 
-  fromParamsToObject,
-} from '../../util/Util'
+import { fromParamsToObject } from '../../util/Util'
 
 import { searchKey } from '../../util/Const'
 import SearchObservable from '../../util/SearchObservable'
@@ -18,9 +16,9 @@ class Search extends Component {
 
     this.state = {
       searchValue: '',
-      isEmpty: false
+      isEmpty: false,
     }
-    
+
     this.setSearchParams = this.setSearchParams.bind(this)
     this.getSearchParams = this.getSearchParams.bind(this)
     this.onSubmitSearch = this.onSubmitSearch.bind(this)
@@ -28,13 +26,13 @@ class Search extends Component {
 
   componentDidMount() {
     this.setState({
-      searchValue: window ? this.getSearchParams() : ''
+      searchValue: window ? this.getSearchParams() : '',
     })
   }
 
   getSearchParams() {
     let queryObject = fromParamsToObject()
-    if(queryObject) {
+    if (queryObject) {
       return queryObject.search
     }
     return null
@@ -46,16 +44,16 @@ class Search extends Component {
 
     this.setState({
       searchValue: value,
-      isEmpty: isEmpty
+      isEmpty: isEmpty,
     })
-    
+
     SearchObservable.notify(value)
   }
 
   onSubmitSearch(e) {
     e.preventDefault()
 
-    if(this.state.searchValue.length === 0) {
+    if (this.state.searchValue.length === 0) {
       navigate('/search-results')
     } else {
       navigate(`/search-results?${searchKey}=${this.state.searchValue}`)
@@ -63,12 +61,22 @@ class Search extends Component {
   }
 
   render() {
-      return (
-        <div className="m-search">
-          <form className="m-search__form" onSubmit={(e) => this.onSubmitSearch(e)}>
-            <SearchField componentClass="a-search m-search__form-input" value={this.state.searchValue} action={(e) => this.setSearchParams(e)} />
-            <Button className="m-search__form-submit" type="submit" disabled={this.state.isEmpty}>Search</Button>
-          </form>
+    return (
+      <div className="m-search">
+        <form className="m-search__form" onSubmit={e => this.onSubmitSearch(e)}>
+          <SearchField
+            componentClass="a-search m-search__form-input"
+            value={this.state.searchValue}
+            action={e => this.setSearchParams(e)}
+          />
+          <Button
+            className="m-search__form-submit"
+            type="submit"
+            disabled={this.state.isEmpty}
+          >
+            Search
+          </Button>
+        </form>
       </div>
     )
   }

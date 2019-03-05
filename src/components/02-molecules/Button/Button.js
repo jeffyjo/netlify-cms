@@ -5,11 +5,12 @@ import './Button.scss'
 
 const Button = ({ children, className, type, disabled }) => {
   return (
-    <button 
-      className={"m-button " + (className ? className : '') }
+    <button
+      className={'m-button ' + (className ? className : '')}
       type={type ? type : ''}
       disabled={disabled}
-      >{children}
+    >
+      {children}
     </button>
   )
 }
@@ -18,7 +19,7 @@ Button.propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
   type: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 }
 
 export default Button

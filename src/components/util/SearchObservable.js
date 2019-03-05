@@ -8,7 +8,9 @@ export default class SearchObservable {
 
   // Remove subscriber
   static unsubscribe(observer) {
-    this.observers = this.observers.filter(subscriber => subscriber !== observer)
+    this.observers = this.observers.filter(
+      subscriber => subscriber !== observer
+    )
   }
 
   // Notify all subscribers

@@ -3,13 +3,12 @@ import propTypes from 'prop-types'
 
 import './SearchField.scss'
 
-const SearchField = ({componentClass, action, value}) => {
-
+const SearchField = ({ componentClass, action, value }) => {
   return (
-    <input 
-      type="search" 
+    <input
+      type="search"
       onChange={action}
-      className={"a-search " + componentClass ? componentClass : ''}
+      className={'a-search ' + componentClass ? componentClass : ''}
       value={value || ''}
       placeholder="Search..."
     />
@@ -19,7 +18,7 @@ const SearchField = ({componentClass, action, value}) => {
 SearchField.propTypes = {
   componentClass: propTypes.string,
   action: propTypes.func,
-  value: propTypes.string
+  value: propTypes.string,
 }
 
 export default SearchField

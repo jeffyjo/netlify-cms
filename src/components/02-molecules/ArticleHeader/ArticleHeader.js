@@ -8,12 +8,22 @@ import TTRLabel from '../../01-atoms/TTRLabel/TTRLabel'
 import { headerConfiguration } from './const'
 import './ArticleHeader.scss'
 
-const ArticleHeader = ({title, date, imageUrl, timeToRead, headerPosition}) => {
-
+const ArticleHeader = ({
+  title,
+  date,
+  imageUrl,
+  timeToRead,
+  headerPosition,
+}) => {
   return (
-    <div className={"m-article-header " + 
-      (headerConfiguration[headerPosition] ? headerConfiguration[headerPosition] : '')
-    }>
+    <div
+      className={
+        'm-article-header ' +
+        (headerConfiguration[headerPosition]
+          ? headerConfiguration[headerPosition]
+          : '')
+      }
+    >
       <h1 className="m-article-header__heading">{title}</h1>
       <div className="m-article-header__image">
         <Image imageUrl={imageUrl} />
@@ -31,7 +41,7 @@ ArticleHeader.propTypes = {
   date: PropTypes.string,
   imageUrl: PropTypes.string,
   timeToRead: PropTypes.number,
-  headerPosition: PropTypes.string.isRequired
+  headerPosition: PropTypes.string.isRequired,
 }
 
 export default ArticleHeader

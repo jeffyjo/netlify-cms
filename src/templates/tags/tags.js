@@ -11,7 +11,9 @@ class TagRoute extends React.Component {
     const tagLinks = posts.map(post => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug} className="m-list-item">
-          <h2 className="m-list-item__title m-list-item__title--sm">{post.node.frontmatter.title}</h2>
+          <h2 className="m-list-item__title m-list-item__title--sm">
+            {post.node.frontmatter.title}
+          </h2>
         </Link>
       </li>
     ))
@@ -30,7 +32,9 @@ class TagRoute extends React.Component {
             <h3 className="t-tags__header">{tagHeader}</h3>
             <ul className="o-list">{tagLinks}</ul>
             <p>
-              <Link className="t-tags__link" to="/tags/">Browse all tags</Link>
+              <Link className="t-tags__link" to="/tags/">
+                Browse all tags
+              </Link>
             </p>
           </div>
         </section>

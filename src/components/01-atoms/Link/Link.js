@@ -6,10 +6,8 @@ import './Link.scss'
 
 const Link = ({ children, to, className }) => {
   return (
-    <GatsbyLink 
-      className={"a-link " + (className ? className : '') }
-      to={to}>
-        {children}
+    <GatsbyLink className={'a-link ' + (className ? className : '')} to={to}>
+      {children}
     </GatsbyLink>
   )
 }
@@ -17,7 +15,7 @@ const Link = ({ children, to, className }) => {
 Link.propsTypes = {
   linkText: Proptypes.string.isRequired,
   url: Proptypes.string.isRequired,
-  className: Proptypes.string
+  className: Proptypes.string,
 }
 
 export default Link

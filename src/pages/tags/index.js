@@ -6,7 +6,12 @@ import Layout from '../../components/util/Layout'
 import './tags.scss'
 
 const TagsPage = ({
-  data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
+  data: {
+    allMarkdownRemark: { group },
+    site: {
+      siteMetadata: { title },
+    },
+  },
 }) => (
   <Layout>
     <section className="">
@@ -16,7 +21,10 @@ const TagsPage = ({
         <ul className="o-list">
           {group.map(tag => (
             <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`} className="m-list-item">
+              <Link
+                to={`/tags/${kebabCase(tag.fieldValue)}/`}
+                className="m-list-item"
+              >
                 {tag.fieldValue} ({tag.totalCount})
               </Link>
             </li>
