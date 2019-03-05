@@ -30,7 +30,6 @@ collections:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "custom" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Hero background", name: "heroBackground", widget: "image", default: null, media_library: { config: { multiple: false } } }
-			-	{ label: "Hero Text Color", name: "heroTextColor", widget: "select", options: [ "1", "2", "3" ] }
       - label: "Hero position" 
         name: "heroPosition" 
         widget: "select" 
