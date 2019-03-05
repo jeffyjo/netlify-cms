@@ -51,4 +51,9 @@ collections:
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Image", name: "image", widget: "image", default: null }
           - { label: "Content orientation", name: "contentOrientation", widget: "select", options: [{ label: "Vertical", value: "vertical" }, { label: "Horizontal", value: "horizotal" }], default: ["vertical"] }
-          - { label: "Image position", name: "imagePosition", widget: "select", options: ["top", "right", "bottom", "left"], default:["bottom"] }
+					- { label: "Image position", name: "imagePosition", widget: "select", options: ["top", "right", "bottom", "left"], default:["bottom"] }
+					- label: "Width"
+						name: "width"
+						widget: "object"
+						fields:
+							-	{ label: "Desktop width", name: "desktopWidth", widget: "select", options: [ "100", "50", "25" ] }
