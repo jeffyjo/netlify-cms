@@ -28,25 +28,21 @@ collections:
     fields:
       - { label: "Template Key", name: "templateKey", widget: "hidden", default: "custom" }
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Hero"
-        name: "hero"
-        widget: "object"
-        fields:
-          - { label: "Hero background", name: "heroBackground", widget: "image", default: null, media_library: { config: { multiple: false } } }
-          - { label: "Hero Text color", name: "heroTextColor", widget: "select", options: [ { label: "Dark", value: "o-hero__title--dark" }, { label: "Light", value: "o-hero__title--light" } ] }
-          - label: "Hero position" 
-            name: "heroPosition" 
-            widget: "select" 
-            options: 
-              - { label: "Top Left", value: "o-hero--top o-hero--left" }
-              - { label: "Top Center", value: "o-hero--top o-hero--middle" }
-              - { label: "Top Right", value: "o-hero--top o-hero--right" }
-              - { label: "Middle Left", value: "o-hero--center o-hero--left" }
-              - { label: "Middle Center", value: "o-hero--center o-hero--middle" }
-              - { label: "Middle Right", value: "o-hero--center o-hero--right" }
-              - { label: "Bottom Left", value: "o-hero--bottom o-hero--left" }
-              - { label: "Bottom Center", value: "o-hero--bottom o-hero--middle" }
-              - { label: "Bottom Right", value: "o-hero--bottom o-hero--right" }
+      - { label: "Hero background", name: "heroBackground", widget: "image", default: null, media_library: { config: { multiple: false } } }
+      - { label: "Hero Text color", name: "heroTextColor", widget: "select", options: [ { label: "Dark", value: "o-hero__title--dark" }, { label: "Light", value: "o-hero__title--light" } ] }
+      - label: "Hero position" 
+        name: "heroPosition" 
+        widget: "select" 
+        options: 
+          - { label: "Top Left", value: "o-hero--top o-hero--left" }
+          - { label: "Top Center", value: "o-hero--top o-hero--middle" }
+          - { label: "Top Right", value: "o-hero--top o-hero--right" }
+          - { label: "Middle Left", value: "o-hero--center o-hero--left" }
+          - { label: "Middle Center", value: "o-hero--center o-hero--middle" }
+          - { label: "Middle Right", value: "o-hero--center o-hero--right" }
+          - { label: "Bottom Left", value: "o-hero--bottom o-hero--left" }
+          - { label: "Bottom Center", value: "o-hero--bottom o-hero--middle" }
+          - { label: "Bottom Right", value: "o-hero--bottom o-hero--right" }
       - label: "Content"
         name: "content" 
         widget: "list"

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { CustomTemplate } from '../../templates/custom/custom'
 
-const CustomPagePreview = ({ entry, getAsset, widgetsFor }) => {
+const CustomPagePreview = ({ entry, getAsset }) => {
   const data = entry.get('data').toJS()
   let { content } = data
 
@@ -11,8 +11,6 @@ const CustomPagePreview = ({ entry, getAsset, widgetsFor }) => {
       publicURL: getAsset(contentItem.image).public_path,
     }
   })
-
-  console.log('hero', widgetsFor('hero').map( e => entry.getIn(['hero', e]) ))
 
   let hero = {
     title: data.title,
