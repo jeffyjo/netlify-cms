@@ -1,3 +1,5 @@
+@import '../../styles/style.scss';
+
 .p-custom {
   
 }
@@ -8,32 +10,87 @@
 
 .p-custom__content {
   margin-top: 2rem;
+}
 
-	& .p-custom__content-block {
-		display: inline-block;
-	}
+.p-custom__content-block {
+  display: inline-block;
+  &--100 {
+    width: 100%;
+    
+    &-md {
+      @include md {
+        width: 100%;
+      }
+    }
+    
+    &-lg {
+      @include lg {
+        width: 100%;
+      }
+    }
+  }
 
-	&--col-1 {
-		& .p-custom__content-block {
-			width: 100%;
-		}
-	}
+  &--75 {
+    width: 75%;
+    
+    &-md {
+      @include md {
+        width: 75%;
+      }
+    }
 
-	&--col-2 {
-		& .p-custom__content-block {
-			width: 50%;
-		}
-	}
+    &-lg {
+      @include lg {
+        width: 75%; 
+      }
+    }
+  }
 
-	&--col-3 {
-		& .p-custom__content-block {
-			width: 33.3333333333%
-		}
-	}
+  &--50 {
+    width: 50%;
 
-	&--col-4 {
-		& .p-custom__content-block {
-			width: 25%;
-		}
-	}
+    &-md {
+      @include md{
+        width: 50%;
+      }
+    }
+
+    &-lg {
+      @include lg {
+        width: 50%;
+      }
+    }
+  }
+
+  &--33 {
+    width: 33.3333333333%;
+    
+    &-md {
+      @include md {
+        width: 33.3333333333%;
+      }
+    }
+    
+    &-lg {
+      @include lg {
+        width: 33.3333333333%;
+      }
+    }
+  }
+
+  &--25 {
+    width: 25%;
+    
+    &-md {
+      @include md {
+        width: 25%;
+      }
+    }
+    
+    &-lg {
+      @include lg {
+        width: 25%;
+      }
+    }
+  }
 }
