@@ -10,6 +10,7 @@ import './custom.scss'
 
 export const CustomTemplate = ({ content, columns, hero }) => {
   let colunmClass = columns ? `p-custom__content--col-${columns}` : ''
+
   return (
     <div className={`p-custom ${colunmClass}`}>
       <Hero {...hero} />
@@ -86,6 +87,11 @@ export const PageQuery = graphql`
           imagePosition
           image {
             publicURL
+          }
+          width {
+            desktopWidth
+            mobileWidth
+            tabletWidth
           }
         }
       }

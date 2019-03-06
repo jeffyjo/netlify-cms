@@ -5,6 +5,7 @@ import { CustomTemplate } from '../../templates/custom/custom'
 const CustomPagePreview = ({ entry, getAsset }) => {
   const data = entry.get('data').toJS()
   let { content, columns } = data
+
   content.map(contentItem => {
     contentItem.image = {
       publicURL: getAsset(contentItem.image).public_path,
