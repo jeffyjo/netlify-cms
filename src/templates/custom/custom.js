@@ -8,11 +8,10 @@ import Hero from '../../components/03-organisms/Hero/Hero'
 
 import './custom.scss'
 
-export const CustomTemplate = ({ content, columns, hero }) => {
-  let colunmClass = columns ? `p-custom__content--col-${columns}` : ''
+export const CustomTemplate = ({ content, hero }) => {
 
   return (
-    <div className={`p-custom ${colunmClass}`}>
+    <div className={`p-custom`}>
       <Hero {...hero} />
       <div className="p-custom__content">
         {content
@@ -34,7 +33,6 @@ export const CustomTemplate = ({ content, columns, hero }) => {
 export const CustomPage = ({ data }) => {
   let {
     title,
-    columns,
     content,
     heroPosition,
     heroBackground,
@@ -52,7 +50,6 @@ export const CustomPage = ({ data }) => {
       <CustomTemplate
         hero={hero}
         title={title}
-        columns={columns}
         content={content}
         heroPosition={heroPosition}
         heroBackground={heroBackground}
@@ -65,8 +62,7 @@ export default CustomPage
 
 CustomTemplate.propTypes = {
   title: PropTypes.string,
-  columns: PropTypes.string,
-  content: PropTypes.array,
+  content: PropTypes.array
 }
 
 export const PageQuery = graphql`
@@ -75,7 +71,6 @@ export const PageQuery = graphql`
       id
       frontmatter {
         title
-        columns
         heroPosition
         heroTextColor
         heroBackground {
