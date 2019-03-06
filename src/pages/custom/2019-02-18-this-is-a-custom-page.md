@@ -18,21 +18,41 @@ content:
     contentOrientation: vertical
     image: /img/apple-touch-icon.png
     imagePosition: bottom
+    width:
+      desktopWidth: '25'
+      mobileWidth: '100'
+      tabletWidth: '50'
   - body: Simple small content
     contentOrientation: vertical
     image: /img/apple-touch-icon.png
     imagePosition: bottom
+    width:
+      desktopWidth: '25'
+      mobileWidth: '100'
+      tabletWidth: '50'
   - body: Simple small content
     contentOrientation: vertical
     image: /img/apple-touch-icon.png
     imagePosition: bottom
+    width:
+      desktopWidth: '25'
+      mobileWidth: '100'
+      tabletWidth: '50'
   - body: Simple small content
     contentOrientation: vertical
     image: /img/apple-touch-icon.png
     imagePosition: bottom
+    width:
+      desktopWidth: '25'
+      mobileWidth: '100'
+      tabletWidth: '50'
   - body: Simple small content
     contentOrientation: vertical
     image: /img/apple-touch-icon.png
     imagePosition: bottom
+    width:
+      desktopWidth: '25'
+      mobileWidth: '100'
+      tabletWidth: '50'
 ---
 
