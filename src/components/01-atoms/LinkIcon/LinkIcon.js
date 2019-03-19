@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import './LinkIcon.scss'
 
-import logo from '../../../img/logo.svg'
+import logo from '../../../assets/logo.svg'
 
 const LinkIcon = ({ url }) => {
   return (
