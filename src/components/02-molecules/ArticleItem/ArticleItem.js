@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Link from '../../01-atoms/Link/Link'
+import './ArticleItem.scss'
 
 const ArticleItem = ({ article }) => {
   let { slug: url } = article.node.fields
-  let { title } = article.node.frontmatter
+  let { title, image } = article.node.frontmatter
 
   return (
-    <li>
-      <Link to={url}>{title}</Link>
+    <li className="m-article-item" style={ {backgroundImage: `${image ? `url(${image.publicURL})`: ''}`} }>
+      <Link className="m-article-item__link" to={url}>{title}</Link>
     </li>
   )
 }

@@ -1,0 +1,32 @@
+@import '../../../styles/style.scss';
+
+.m-article-item {
+  height: 50vh;
+  width: 100%;
+  margin: 2em 0;
+  position: relative;
+  background-color: $article-item-background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+
+}
+
+.m-article-item__link {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 4em;
+  color: $article-item-text;
+  z-index: 500;
+}
