@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/util/Layout'
 
-import ArticleContainer from '../container/Article-container'
+import ArticleContainer from '../container/ArticleContainer/ArticleContainer'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -40,6 +40,9 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             tags
+            image {
+              publicURL
+            }
           }
           fields {
             slug
