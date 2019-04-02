@@ -1,6 +1,6 @@
 ---
 templateKey: article
-title: Another article
+title: Another article with some interesting stuff
 image: /img/apple-touch-icon.png
 date: 2019-02-05T09:38:46.554Z
 tags:
