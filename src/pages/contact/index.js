@@ -30,7 +30,7 @@ const Contact = () => {
       {/* Postback */}
       <form
         name="contact"
-        action="/contact/submission"
+        action="/contact/submission/"
         className="o-form"
         method="POST"
         data-netlify="true"
